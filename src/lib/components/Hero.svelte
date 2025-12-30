@@ -11,13 +11,20 @@
         },
         {
             image: '/wnętrze_toyota.jpg',
-            title: 'Wnętrza',
+            title: 'Nieruchomości',
             subtitle: 'Profesjonalna prezentacja nieruchomości'
         },
         {
             image: '/cloud laser-5971.jpg',
+            mobileImage: '/cloud laser-6041.jpg',
             title: 'Eventy',
             subtitle: 'Chwile warte zapamiętania'
+        },
+        {
+            image: '/baner_sesje_produktowe.png',
+            mobileImage: '/pion baner.jpg',
+            title: 'Sesje Produktowe',
+            subtitle: 'Pokaż swoje produkty w najlepszym świetle'
         }
     ];
 
@@ -30,6 +37,9 @@
     let animationID;
     let sliderWidth = 0;
     let autoPlayInterval;
+    let windowWidth = 0;
+    
+    $: isMobile = windowWidth <= 768;
 
     function startAutoPlay() {
         clearInterval(autoPlayInterval);
@@ -133,12 +143,17 @@
             sliderWidth = track.clientWidth; // update width
             setPositionByIndex(); // snap to correct pos
         }
+        windowWidth = window.innerWidth;
     }
 
     onMount(() => {
         if (track) {
             sliderWidth = track.clientWidth;
         }
+        
+        // Detect mobile
+        windowWidth = window.innerWidth;
+        
         window.addEventListener('resize', handleResize);
         
         // Prevent context menu on long press
@@ -177,7 +192,7 @@
             class:smooth={!isDragging}
         >
             {#each slides as slide}
-                <div class="slide" style="background-image: url('{slide.image}')">
+                <div class="slide" style="background-image: url('{isMobile && slide.mobileImage ? slide.mobileImage : slide.image}')">
                     <div class="overlay"></div>
                     <!-- Using pointer-events-none on content to prevent text selection during drag -->
                     <div class="container hero-content">
