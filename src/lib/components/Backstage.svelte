@@ -101,13 +101,6 @@
         display: block;
     }
 
-    .poster {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-    }
-
     .overlay {
         position: absolute;
         top: 0;

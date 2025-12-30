@@ -16,6 +16,11 @@
     }
 </script>
 
+<svelte:head>
+    <!-- Preload hero image for LCP optimization -->
+    <link rel="preload" as="image" href="/SUBARU-2611.jpg" fetchpriority="high">
+</svelte:head>
+
 <Hero {scrollToQuote} />
 <Services />
 <Portfolio />

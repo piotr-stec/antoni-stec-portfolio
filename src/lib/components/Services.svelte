@@ -63,7 +63,14 @@
                                 <p>{services[activeService].description}</p>
                             </div>
                             <div class="image-wrapper">
-                                <img src={services[activeService].image} alt={services[activeService].category} />
+                                <img 
+                                    src={services[activeService].image} 
+                                    alt={services[activeService].category}
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="400"
+                                    height="300"
+                                />
                             </div>
                         </div>
 

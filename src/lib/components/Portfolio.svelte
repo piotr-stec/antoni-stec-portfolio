@@ -196,6 +196,9 @@
                             src={item.src} 
                             alt={item.alt} 
                             loading="lazy"
+                            decoding="async"
+                            width="400"
+                            height="300"
                         />
                         <div class="overlay">
                             <span class="item-title">{item.title}</span>
@@ -224,6 +227,7 @@
                     src={selectedItem.gallery ? selectedItem.gallery[currentGalleryIndex] : selectedItem.src} 
                     alt={selectedItem.alt} 
                     in:fade={{duration: 200}}
+                    decoding="async"
                 />
             {/key}
             
