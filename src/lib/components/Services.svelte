@@ -276,6 +276,7 @@
         .service-header {
             grid-template-columns: 1fr;
             gap: 1.5rem;
+            text-align: center; /* Center text on mobile */
         }
 
         .service-header h3 {
@@ -283,9 +284,24 @@
             margin-top: 0;
         }
 
+        .image-wrapper {
+            margin: 0 auto; /* Center image on mobile */
+            max-width: 400px;
+        }
+
+        .pricing-list {
+            align-items: center; /* Center items in list */
+        }
+
+        .price-item {
+            width: 100%;
+            text-align: center;
+        }
+
         .price-header {
             flex-direction: column;
             gap: 0.25rem;
+            align-items: center; /* Center header content */
         }
     }
 </style>

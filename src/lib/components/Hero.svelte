@@ -187,8 +187,8 @@
         height: 24px;
     }
 
-    .prev { left: 2rem; }
-    .next { right: 2rem; }
+    .prev { left: 0.5rem; }
+    .next { right: 0.5rem; }
 
     .indicators {
         position: absolute;
@@ -235,6 +235,7 @@
             gap: 1rem;
             width: 100%;
             max-width: 300px;
+            margin: 0 auto; /* Centering the buttons */
         }
 
         .btn {
@@ -244,9 +245,10 @@
         .nav-arrow {
             width: 40px; /* Smaller arrows */
             height: 40px;
+            top: 60%; /* Position higher on mobile */
         }
 
-        .prev { left: 1rem; }
-        .next { right: 1rem; }
+        .prev { left: 0.2rem; }
+        .next { right: 0.2rem; }
     }
 </style>
