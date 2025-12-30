@@ -3,17 +3,118 @@
     import { flip } from 'svelte/animate';
 
     let activeFilter = 'all';
-    let selectedImage = null;
+    let selectedItem = null;
+    let currentGalleryIndex = 0;
 
     const portfolioItems = [
-        { id: 1, category: 'auto', src: '/bmw m6 edit-1493.jpg', alt: 'BMW M6' },
-        { id: 2, category: 'interior', src: '/wnętrze_toyota.jpg', alt: 'Wnętrze Toyota' },
-        { id: 3, category: 'event', src: '/cloud laser-6041.jpg', alt: 'Laser Show' },
-        { id: 4, category: 'auto', src: '/M4-5534.jpg', alt: 'BMW M4' },
-        { id: 5, category: 'interior', src: '/saab-4835.jpg', alt: 'Saab Detal' },
-        { id: 6, category: 'auto', src: '/SUBARU-2611.jpg', alt: 'Subaru' },
-        { id: 7, category: 'auto', src: '/Bmw m830i-2837.jpg', alt: 'BMW 8' },
-        { id: 8, category: 'event', src: '/cloud laser-5971.jpg', alt: 'Event' }
+        { 
+            id: 1, 
+            category: 'auto', 
+            src: '/bmw m6 edit-1493.jpg', 
+            alt: 'BMW M6', 
+            title: 'BMW M6',
+            gallery: [
+                '/M6/bmw m6 edit-1504.jpg',
+                '/M6/m6.jpg',
+                '/M6/m6(1).jpg',
+                '/M6/m6(2).jpg'
+            ]
+        },
+        { 
+            id: 2, 
+            category: 'auto', 
+            src: '/SUBARU-2611.jpg', 
+            alt: 'Subaru', 
+            title: 'SUBARU',
+            gallery: [
+                '/SUBARU/SUBARU-2580.jpg',
+                '/SUBARU/SUBARU-2600.jpg',
+                '/SUBARU/SUBARU-2659.jpg'
+            ]
+        },
+        { 
+            id: 3, 
+            category: 'auto', 
+            src: '/saab-4835.jpg', 
+            alt: 'Saab', 
+            title: 'SAAB',
+            gallery: [
+                '/SAAB/saab-4835.jpg',
+                '/SAAB/saab ikea-5038.jpg',
+                '/SAAB/saab ikea-5089.jpg',
+                '/SAAB/saab ikea-5172.jpg',
+                '/SAAB/saab-4890.jpg',
+                '/SAAB/saab-4904.jpg'
+            ]
+        },
+        { 
+            id: 4, 
+            category: 'auto', 
+            src: '/M850I/Bmw_m850i-2694.jpg', 
+            alt: 'BMW 8', 
+            title: 'BMW M850i',
+            gallery: [
+                '/M850I/Bmw_m850i-2694.jpg',
+                '/M850I/Bmw_m850i-2837.jpg'
+            ]
+        },
+        { 
+            id: 5, 
+            category: 'auto', 
+            src: '/JEEP-3862.jpg', 
+            alt: 'Jeep', 
+            title: 'JEEP',
+            gallery: [
+                '/JEEP/JEEP-3862.jpg',
+                '/JEEP/JEEP-3783.jpg',
+                '/JEEP/JEEP-3837.jpg',
+                '/JEEP/JEEP-3935.jpg'
+            ]
+        },
+        { 
+            id: 6, 
+            category: 'auto', 
+            src: '/yaris.jpg', 
+            alt: 'Yaris', 
+            title: 'TOYOTA YARIS',
+            gallery: [
+                '/YARIS/yaris.jpg',
+                '/YARIS/yaris(1).jpg',
+                '/YARIS/yaris(2).jpg'
+            ]
+        },
+        { 
+            id: 7, 
+            category: 'auto', 
+            src: '/M8-5471.jpg', 
+            alt: 'BMW M8', 
+            title: 'BMW M8',
+            gallery: [
+                '/M8/M8.jpg',
+                '/M8/M8(1).jpg',
+                '/M8/M8(2).jpg',
+                '/M8/M8(3).jpg',
+                '/M8/subaru.jpg',
+                '/M8/subaru(1).jpg',
+                '/M8/subaru(2).jpg'
+            ]
+        },
+        { 
+            id: 8, 
+            category: 'interior', 
+            src: '/wnętrze_toyota.jpg', 
+            alt: 'Wnętrze Toyota', 
+            title: 'WNĘTRZA',
+            gallery: ['/wnętrze_toyota.jpg', '/hilux.png']
+        },
+        { 
+            id: 9, 
+            category: 'event', 
+            src: '/cloud laser-6041.jpg', 
+            alt: 'Laser Show', 
+            title: 'EVENTY',
+            gallery: ['/cloud laser-6041.jpg', '/cloud laser-5971.jpg']
+        }
     ];
 
     $: filteredItems = activeFilter === 'all' 
@@ -25,13 +126,52 @@
     }
 
     function openModal(item) {
-        selectedImage = item;
+        selectedItem = item;
+        currentGalleryIndex = 0;
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-        selectedImage = null;
+        selectedItem = null;
         document.body.style.overflow = 'auto';
+    }
+
+    function nextImage(e) {
+        if (e) e.stopPropagation();
+        if (selectedItem && selectedItem.gallery && selectedItem.gallery.length > 1) {
+            currentGalleryIndex = (currentGalleryIndex + 1) % selectedItem.gallery.length;
+        }
+    }
+
+    function prevImage(e) {
+        if (e) e.stopPropagation();
+        if (selectedItem && selectedItem.gallery && selectedItem.gallery.length > 1) {
+            currentGalleryIndex = (currentGalleryIndex - 1 + selectedItem.gallery.length) % selectedItem.gallery.length;
+        }
+    }
+
+    // Touch support for modal
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleTouchStart(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }
+
+    function handleTouchEnd(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }
+
+    function handleSwipe() {
+        if (!selectedItem) return;
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+            nextImage();
+        }
+        if (touchEndX > touchStartX + threshold) {
+            prevImage();
+        }
     }
 </script>
 
@@ -51,23 +191,49 @@
                 <div class="gallery-item" in:scale={{duration: 300, start: 0.95}} animate:flip={{duration: 300}}>
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-                    <img 
-                        src={item.src} 
-                        alt={item.alt} 
-                        loading="lazy"
-                        on:click={() => openModal(item)}
-                    />
+                    <div class="image-wrapper" on:click={() => openModal(item)}>
+                        <img 
+                            src={item.src} 
+                            alt={item.alt} 
+                            loading="lazy"
+                        />
+                        <div class="overlay">
+                            <span class="item-title">{item.title}</span>
+                            {#if item.gallery && item.gallery.length > 1}
+                                <span class="gallery-count">{item.gallery.length} zdjęć</span>
+                            {/if}
+                        </div>
+                    </div>
                 </div>
             {/each}
         </div>
     </div>
 </section>
 
-{#if selectedImage}
-    <div class="modal-backdrop" on:click={closeModal} transition:fade={{duration: 200}}>
+{#if selectedItem}
+    <div 
+        class="modal-backdrop" 
+        on:click={closeModal} 
+        transition:fade={{duration: 200}}
+        on:touchstart={handleTouchStart}
+        on:touchend={handleTouchEnd}
+    >
         <div class="modal-content" on:click|stopPropagation>
-            <img src={selectedImage.src} alt={selectedImage.alt} />
+            {#key currentGalleryIndex}
+                <img 
+                    src={selectedItem.gallery ? selectedItem.gallery[currentGalleryIndex] : selectedItem.src} 
+                    alt={selectedItem.alt} 
+                    in:fade={{duration: 200}}
+                />
+            {/key}
+            
             <button class="close-btn" on:click={closeModal}>&times;</button>
+
+            {#if selectedItem.gallery && selectedItem.gallery.length > 1}
+                <button class="nav-btn prev" on:click={prevImage}>&#10094;</button>
+                <button class="nav-btn next" on:click={nextImage}>&#10095;</button>
+                <div class="counter">{currentGalleryIndex + 1} / {selectedItem.gallery.length}</div>
+            {/if}
         </div>
     </div>
 {/if}
@@ -111,11 +277,17 @@
     }
 
     .gallery-item {
-        aspect-ratio: 16/9; /* Or 4/3, depending on preference */
-        overflow: hidden;
+        aspect-ratio: 16/9;
         border-radius: 8px;
-        cursor: pointer;
         background: #1a1a1a;
+        overflow: hidden;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
     }
 
     .gallery-item img {
@@ -123,9 +295,46 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
+        display: block;
     }
 
-    .gallery-item:hover img {
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        gap: 0.5rem;
+    }
+
+    .item-title {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 0.5rem 1.5rem;
+        backdrop-filter: blur(4px);
+    }
+
+    .gallery-count {
+        color: #ccc;
+        font-size: 0.9rem;
+    }
+
+    .image-wrapper:hover .overlay {
+        opacity: 1;
+    }
+
+    .image-wrapper:hover img {
         transform: scale(1.05);
     }
 
@@ -136,7 +345,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         z-index: 1000;
         display: flex;
         align-items: center;
@@ -148,6 +357,9 @@
         position: relative;
         max-width: 90%;
         max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .modal-content img {
@@ -167,6 +379,43 @@
         font-size: 2rem;
         cursor: pointer;
         padding: 10px;
+        z-index: 1001;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        font-size: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .nav-btn:hover {
+        background: rgba(255,255,255,0.2);
+    }
+
+    .prev { left: -80px; }
+    .next { right: -80px; }
+
+    .counter {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 1rem;
     }
     
     @media (max-width: 768px) {
@@ -177,5 +426,15 @@
         .modal-content img {
             max-height: 60vh;
         }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        .prev { left: -20px; }
+        .next { right: -20px; }
     }
 </style>
