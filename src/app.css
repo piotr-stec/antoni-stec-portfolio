@@ -1,0 +1,4 @@
+/* Global CSS Reset / Basics */
+html {
+    scroll-behavior: smooth;
+}
