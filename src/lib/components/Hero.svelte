@@ -211,6 +211,8 @@
             ></button>
         {/each}
     </div>
+
+    <div class="fade-bottom"></div>
 </section>
 
 <style>
@@ -221,6 +223,17 @@
         overflow: hidden;
         padding: 0;
         margin-top: -80px;
+    }
+
+    .fade-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, transparent, #0a0a0a);
+        z-index: 10;
+        pointer-events: none;
     }
 
     .slider-track-container {
@@ -403,7 +416,7 @@
         .nav-arrow {
             width: 40px;
             height: 40px;
-            top: 40%;
+            top: 60%;
         }
 
         .prev { left: 0.2rem; }

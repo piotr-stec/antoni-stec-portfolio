@@ -80,7 +80,7 @@
                         </div>
                         
                         <div class="note">
-                            * Podane ceny są orientacyjne (netto) i mogą się różnić w zależności od lokalizacji i specyfiki zlecenia.
+                            * Podane ceny są orientacyjne i mogą się różnić w zależności od lokalizacji i specyfiki zlecenia.
                         </div>
                     </div>
                 {/key}
