@@ -1,4 +1,8 @@
 <script>
+    import { onMount } from 'svelte';
+    import flatpickr from 'flatpickr';
+    import 'flatpickr/dist/flatpickr.min.css';
+    
     export let id = "contact";
     
     let formData = {
@@ -12,6 +16,31 @@
     let isSubmitting = false;
     let submitStatus = null; // 'success' | 'error' | null
     let statusMessage = '';
+    let dateInput;
+    
+    onMount(() => {
+        // Inicjalizacja flatpickr
+        if (dateInput) {
+            flatpickr(dateInput, {
+                minDate: 'today',
+                dateFormat: 'd.m.Y',
+                locale: {
+                    firstDayOfWeek: 1,
+                    weekdays: {
+                        shorthand: ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],
+                        longhand: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota']
+                    },
+                    months: {
+                        shorthand: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'],
+                        longhand: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień']
+                    }
+                },
+                onChange: function(selectedDates, dateStr) {
+                    formData.date = dateStr;
+                }
+            });
+        }
+    });
     
     async function handleSubmit() {
         isSubmitting = true;
@@ -124,9 +153,11 @@
                     <input 
                         type="text" 
                         id="date"
+                        bind:this={dateInput}
                         bind:value={formData.date}
-                        placeholder="np. Lipiec 2025"
+                        placeholder="Wybierz datę"
                         disabled={isSubmitting}
+                        readonly
                     >
                 </div>
 
@@ -225,6 +256,127 @@
 
     input:focus, select:focus, textarea:focus {
         border-color: #fff;
+    }
+    
+    /* Flatpickr custom styling - improved readability */
+    :global(.flatpickr-calendar) {
+        background: #1a1a1a;
+        border: 1px solid #444;
+        border-radius: 12px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        font-size: 15px;
+    }
+    
+    :global(.flatpickr-months) {
+        background: #1a1a1a;
+        padding: 15px 10px;
+        margin-bottom: 10px;
+    }
+    
+    :global(.flatpickr-current-month) {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    :global(.flatpickr-month) {
+        color: #fff;
+        fill: #fff;
+    }
+    
+    :global(.flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month) {
+        fill: #fff;
+        padding: 10px;
+    }
+    
+    :global(.flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover) {
+        background: #333;
+        border-radius: 6px;
+    }
+    
+    :global(.flatpickr-months .flatpickr-prev-month:hover svg,
+    .flatpickr-months .flatpickr-next-month:hover svg) {
+        fill: #fff;
+    }
+    
+    :global(.flatpickr-weekdays) {
+        background: #1a1a1a;
+        padding: 10px 0;
+        margin-bottom: 5px;
+    }
+    
+    :global(.flatpickr-weekday) {
+        color: #fff !important;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    :global(span.flatpickr-weekday) {
+        color: #fff !important;
+    }
+    
+    :global(.flatpickr-days) {
+        background: #1a1a1a;
+    }
+    
+    :global(.flatpickr-day) {
+        color: #fff;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        height: 42px;
+        line-height: 42px;
+        margin: 2px;
+        border: 2px solid transparent;
+    }
+    
+    :global(.flatpickr-day:hover:not(.flatpickr-disabled)) {
+        background: #2a2a2a;
+        border-color: #444;
+        color: #fff;
+    }
+    
+    :global(.flatpickr-day.selected) {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+        font-weight: 600;
+    }
+    
+    :global(.flatpickr-day.selected:hover) {
+        background: #fff;
+        border-color: #fff;
+    }
+    
+    :global(.flatpickr-day.today) {
+        border-color: #888;
+        color: #fff;
+        background: #2a2a2a;
+    }
+    
+    :global(.flatpickr-day.today:hover) {
+        border-color: #aaa;
+        background: #333;
+    }
+    
+    :global(.flatpickr-day.disabled,
+    .flatpickr-day.prevMonthDay,
+    .flatpickr-day.nextMonthDay) {
+        color: #555;
+    }
+    
+    :global(.flatpickr-day.disabled:hover) {
+        background: transparent;
+        border-color: transparent;
+        cursor: not-allowed;
+    }
+    
+    :global(.numInputWrapper:hover) {
+        background: #2a2a2a;
     }
 
     .form-actions {
