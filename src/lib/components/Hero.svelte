@@ -1,6 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
-    import { fade } from 'svelte/transition';
+    import { onMount, onDestroy } from 'svelte';
 
     export let scrollToQuote;
 
@@ -22,59 +21,176 @@
         }
     ];
 
-    let currentSlide = 0;
-    const duration = 5000;
-    let interval;
+    let currentIndex = 0;
+    let track;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    let sliderWidth = 0;
+    let autoPlayInterval;
+
+    function startAutoPlay() {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(() => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex += 1;
+            } else {
+                currentIndex = 0;
+            }
+            setPositionByIndex();
+        }, 5000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Touch Events
+    function touchStart(index) {
+        return function (event) {
+            stopAutoPlay();
+            isDragging = true;
+            startPos = getPositionX(event);
+            animationID = requestAnimationFrame(animation);
+            // track.style.cursor = 'grabbing';
+        };
+    }
+
+    function touchMove(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+        }
+    }
+
+    function touchEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        
+        const movedBy = currentTranslate - prevTranslate;
+
+        // Threshold to change slide
+        if (movedBy < -100 && currentIndex < slides.length - 1) {
+            currentIndex += 1;
+        }
+
+        if (movedBy > 100 && currentIndex > 0) {
+            currentIndex -= 1;
+        }
+
+        setPositionByIndex();
+        startAutoPlay();
+        // track.style.cursor = 'grab';
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        setSliderPosition();
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    function setSliderPosition() {
+        if (track) {
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        }
+    }
+
+    function setPositionByIndex() {
+        currentTranslate = currentIndex * -sliderWidth;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+    }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        resetInterval();
+        stopAutoPlay();
+        if (currentIndex < slides.length - 1) {
+            currentIndex += 1;
+        } else {
+            currentIndex = 0;
+        }
+        setPositionByIndex();
+        startAutoPlay();
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        resetInterval();
+        stopAutoPlay();
+        if (currentIndex > 0) {
+            currentIndex -= 1;
+        } else {
+            currentIndex = slides.length - 1;
+        }
+        setPositionByIndex();
+        startAutoPlay();
     }
 
-    function resetInterval() {
-        clearInterval(interval);
-        interval = setInterval(nextSlide, duration);
+    function handleResize() {
+        if (track) {
+            sliderWidth = track.clientWidth; // update width
+            setPositionByIndex(); // snap to correct pos
+        }
     }
 
     onMount(() => {
-        interval = setInterval(nextSlide, duration);
-        return () => clearInterval(interval);
+        if (track) {
+            sliderWidth = track.clientWidth;
+        }
+        window.addEventListener('resize', handleResize);
+        
+        // Prevent context menu on long press
+        window.oncontextmenu = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
+
+        startAutoPlay();
+    });
+
+    onDestroy(() => {
+        stopAutoPlay();
+        if (typeof window !== 'undefined') {
+            window.removeEventListener('resize', handleResize);
+        }
     });
 </script>
 
 <section class="hero" id="start">
-    {#each slides as slide, i}
-        {#if i === currentSlide}
-            <div class="hero-bg" style="background-image: url('{slide.image}')" transition:fade={{duration: 1000}}></div>
-        {/if}
-    {/each}
-    
-    <div class="overlay"></div>
-
-    <div class="container hero-content">
-        {#key currentSlide}
-            <div in:fade={{duration: 600, delay: 200}} class="text-content">
-                <p class="subtitle">{slides[currentSlide].subtitle}</p>
-                <h1>{slides[currentSlide].title}</h1>
-                <div class="cta-group">
-                    <a href="#offer" class="btn btn-outline">Oferta</a>
-                    <button on:click={scrollToQuote} class="btn btn-primary">Poproś o wycenę</button>
+    <div 
+        class="slider-track-container"
+        on:mousedown={touchStart(currentIndex)}
+        on:touchstart={touchStart(currentIndex)}
+        on:mouseup={touchEnd}
+        on:mouseleave={() => { if(isDragging) touchEnd() }}
+        on:touchend={touchEnd}
+        on:mousemove={touchMove}
+        on:touchmove={touchMove}
+    >
+        <div 
+            class="slider-track" 
+            bind:this={track}
+            class:grabbing={isDragging}
+            class:smooth={!isDragging}
+        >
+            {#each slides as slide}
+                <div class="slide" style="background-image: url('{slide.image}')">
+                    <div class="overlay"></div>
+                    <!-- Using pointer-events-none on content to prevent text selection during drag -->
+                    <div class="container hero-content">
+                        <div class="text-content">
+                            <p class="subtitle">{slide.subtitle}</p>
+                            <h1>{slide.title}</h1>
+                            <div class="cta-group">
+                                <a href="#offer" class="btn btn-outline" on:mousedown|stopPropagation on:touchstart|stopPropagation>Oferta</a>
+                                <button on:click={scrollToQuote} class="btn btn-primary" on:mousedown|stopPropagation on:touchstart|stopPropagation>Poproś o wycenę</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        {/key}
-        
-        <div class="indicators">
-            {#each slides as _, i}
-                <button 
-                    class:active={i === currentSlide} 
-                    on:click={() => currentSlide = i}
-                    aria-label="Slide {i + 1}"
-                ></button>
             {/each}
         </div>
     </div>
@@ -85,6 +201,16 @@
     <button class="nav-arrow next" on:click={nextSlide} aria-label="Następny slajd">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </button>
+    
+    <div class="indicators">
+        {#each slides as _, i}
+            <button 
+                class:active={i === currentIndex} 
+                on:click={() => { currentIndex = i; setPositionByIndex(); }}
+                aria-label="Slide {i + 1}"
+            ></button>
+        {/each}
+    </div>
 </section>
 
 <style>
@@ -92,23 +218,45 @@
         position: relative;
         height: 100vh;
         min-height: 600px;
+        overflow: hidden;
+        padding: 0;
+        margin-top: -80px;
+    }
+
+    .slider-track-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        cursor: grab;
+    }
+
+    .slider-track-container:active {
+        cursor: grabbing;
+    }
+
+    .slider-track {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        /* No transition by default to allow instant drag update */
+        will-change: transform;
+    }
+
+    .slider-track.smooth {
+        transition: transform 0.3s ease-out;
+    }
+
+    .slide {
+        min-width: 100%; /* Each slide is 100% of container width */
+        height: 100%;
+        position: relative;
+        background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        padding: 0;
-        margin-top: -80px; /* Counteract navbar height to go full screen */
-    }
-
-    .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
+        user-select: none; /* Prevent selection while dragging */
+        -webkit-user-drag: none;
     }
 
     .overlay {
@@ -118,19 +266,33 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
-        z-index: 2;
+        z-index: 1;
+        pointer-events: none;
     }
 
     .hero-content {
         position: relative;
-        z-index: 3;
+        z-index: 2;
         text-align: center;
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        pointer-events: none; /* Pass clicks through text area mostly, but re-enable for buttons */
+    }
+
+    .text-content {
+        pointer-events: auto;
+    }
+    
+    /* Re-enable pointer events for buttons specifically */
+    .cta-group {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+        pointer-events: auto;
     }
 
     h1 {
@@ -150,18 +312,11 @@
         font-weight: 300;
     }
 
-    .cta-group {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
     .nav-arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5); /* Darker background */
+        background: rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
         width: 50px;
@@ -171,7 +326,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 20; /* Higher z-index */
+        z-index: 20;
         transition: all 0.3s;
         backdrop-filter: blur(5px);
     }
@@ -179,7 +334,7 @@
     .nav-arrow:hover {
         background: rgba(0, 0, 0, 0.8);
         border-color: white;
-        transform: translateY(-50%) scale(1.1); /* Slight scale on hover */
+        transform: translateY(-50%) scale(1.1);
     }
 
     .nav-arrow svg {
@@ -193,8 +348,11 @@
     .indicators {
         position: absolute;
         bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         gap: 1rem;
+        z-index: 20;
     }
 
     .indicators button {
@@ -217,11 +375,11 @@
 
     @media (max-width: 1024px) {
         .hero {
-            min-height: 500px; /* Reduced min-height for mobile */
+            min-height: 500px;
         }
 
         h1 {
-            font-size: 3rem; /* Smaller font on mobile */
+            font-size: 3rem;
             margin-bottom: 1.5rem;
         }
 
@@ -235,7 +393,7 @@
             gap: 1rem;
             width: 100%;
             max-width: 300px;
-            margin: 0 auto; /* Centering the buttons */
+            margin: 0 auto;
         }
 
         .btn {
@@ -243,9 +401,9 @@
         }
 
         .nav-arrow {
-            width: 40px; /* Smaller arrows */
+            width: 40px;
             height: 40px;
-            top: 60%; /* Position higher on mobile */
+            top: 40%;
         }
 
         .prev { left: 0.2rem; }
