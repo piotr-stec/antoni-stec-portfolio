@@ -1,5 +1,60 @@
 <script>
     export let id = "contact";
+    
+    let formData = {
+        name: '',
+        email: '',
+        service: 'motoryzacja',
+        date: '',
+        message: ''
+    };
+    
+    let isSubmitting = false;
+    let submitStatus = null; // 'success' | 'error' | null
+    let statusMessage = '';
+    
+    async function handleSubmit() {
+        isSubmitting = true;
+        submitStatus = null;
+        
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                submitStatus = 'success';
+                statusMessage = result.message || 'Wiadomość została wysłana pomyślnie!';
+                // Resetowanie formularza
+                formData = {
+                    name: '',
+                    email: '',
+                    service: 'motoryzacja',
+                    date: '',
+                    message: ''
+                };
+            } else {
+                submitStatus = 'error';
+                statusMessage = result.error || 'Wystąpił błąd podczas wysyłania wiadomości.';
+            }
+        } catch (error) {
+            submitStatus = 'error';
+            statusMessage = 'Nie udało się połączyć z serwerem. Spróbuj ponownie później.';
+            console.error('Error:', error);
+        } finally {
+            isSubmitting = false;
+            // Automatyczne ukrycie komunikatu po 5 sekundach
+            setTimeout(() => {
+                submitStatus = null;
+            }, 5000);
+        }
+    }
 </script>
 
 <section {id} class="contact-section">
@@ -19,20 +74,44 @@
                 </div>
             </div>
 
-            <form class="contact-form" on:submit|preventDefault={() => alert('Dziękuję! To tylko wersja demo, więc wiadomość nie została wysłana.')}>
+            <form class="contact-form" on:submit|preventDefault={handleSubmit}>
+                {#if submitStatus}
+                    <div class="status-message {submitStatus}">
+                        {statusMessage}
+                    </div>
+                {/if}
+                
                 <div class="form-group">
-                    <label for="name">Imię</label>
-                    <input type="text" id="name" required placeholder="Twoje imię">
+                    <label for="name">Imię *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        bind:value={formData.name}
+                        required 
+                        placeholder="Twoje imię"
+                        disabled={isSubmitting}
+                    >
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required placeholder="twoj@email.com">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        bind:value={formData.email}
+                        required 
+                        placeholder="twoj@email.com"
+                        disabled={isSubmitting}
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="service">Typ usługi</label>
-                    <select id="service">
+                    <select 
+                        id="service"
+                        bind:value={formData.service}
+                        disabled={isSubmitting}
+                    >
                         <option value="motoryzacja">Sesja Motoryzacyjna</option>
                         <option value="wnetrza">Nieruchomości</option>
                         <option value="event">Event / Wydarzenie</option>
@@ -42,16 +121,35 @@
 
                 <div class="form-group">
                     <label for="date">Preferowany termin</label>
-                    <input type="text" id="date" placeholder="np. Lipiec 2025">
+                    <input 
+                        type="text" 
+                        id="date"
+                        bind:value={formData.date}
+                        placeholder="np. Lipiec 2025"
+                        disabled={isSubmitting}
+                    >
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="message">Opis zlecenia</label>
-                    <textarea id="message" rows="4" placeholder="Opisz co chcesz zrealizować..."></textarea>
+                    <label for="message">Opis zlecenia *</label>
+                    <textarea 
+                        id="message" 
+                        rows="4" 
+                        bind:value={formData.message}
+                        placeholder="Opisz co chcesz zrealizować..."
+                        required
+                        disabled={isSubmitting}
+                    ></textarea>
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Wyślij zapytanie</button>
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary"
+                        disabled={isSubmitting}
+                    >
+                        {isSubmitting ? 'Wysyłanie...' : 'Wyślij zapytanie'}
+                    </button>
                 </div>
             </form>
         </div>
@@ -136,6 +234,43 @@
     .form-actions button {
         width: 100%;
         justify-content: center;
+    }
+    
+    .form-actions button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    .status-message {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: 500;
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    .status-message.success {
+        background: rgba(34, 197, 94, 0.15);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        color: #4ade80;
+    }
+    
+    .status-message.error {
+        background: rgba(239, 68, 68, 0.15);
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        color: #f87171;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @media (max-width: 768px) {
