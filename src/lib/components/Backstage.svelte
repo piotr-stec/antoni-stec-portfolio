@@ -1,27 +1,66 @@
+<script>
+    import { onMount } from 'svelte';
+    
+    let isMobile = false;
+    let videoElement;
+    
+    onMount(() => {
+        // Detect if mobile device
+        isMobile = window.innerWidth <= 768;
+        
+        // Update on resize
+        const handleResize = () => {
+            isMobile = window.innerWidth <= 768;
+        };
+        
+        window.addEventListener('resize', handleResize);
+        
+        // Intersection Observer for play/pause control
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (videoElement) {
+                        if (entry.isIntersecting) {
+                            // Play video when visible
+                            const playPromise = videoElement.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.log("Autoplay prevented:", error);
+                                });
+                            }
+                        } else {
+                            // Pause video when not visible to save resources
+                            videoElement.pause();
+                        }
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        
+        if (videoElement) {
+            observer.observe(videoElement);
+        }
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            observer.disconnect();
+        };
+    });
+</script>
+
 <section class="backstage">
     <div class="video-container">
-        <!-- Desktop Video -->
         <video 
-            class="desktop-video"
+            bind:this={videoElement}
             autoplay 
             loop 
             muted 
             playsinline
+            preload="auto"
             poster="/M4-5534.jpg"
         >
-            <source src="/backstage_video/desktop.mp4" type="video/mp4">
-        </video>
-
-        <!-- Mobile Video -->
-        <video 
-            class="mobile-video"
-            autoplay 
-            loop 
-            muted 
-            playsinline
-            poster="/M4-5534.jpg"
-        >
-            <source src="/backstage_video/mobilna.mp4" type="video/mp4">
+            <source src={isMobile ? "/backstage_video/mobilna.mp4" : "/backstage_video/desktop.mp4"} type="video/mp4">
         </video>
     </div>
 
@@ -36,7 +75,7 @@
 <style>
     .backstage {
         position: relative;
-        height: 80vh; /* Adjust height as needed */
+        height: 90vh; /* Adjust height as needed */
         min-height: 400px;
         overflow: hidden;
         display: flex;
@@ -62,12 +101,11 @@
         display: block;
     }
 
-    .desktop-video {
-        display: block;
-    }
-
-    .mobile-video {
-        display: none;
+    .poster {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
     }
 
     .overlay {
@@ -100,20 +138,16 @@
     }
 
     @media (max-width: 768px) {
-        .desktop-video {
-            display: none;
-        }
-
-        .mobile-video {
-            display: block;
-        }
-
         .backstage {
             height: 80vh; /* Taller on mobile for vertical video */
         }
 
         h2 {
             font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
         }
     }
 </style>
