@@ -43,9 +43,14 @@
         inne: []
     };
     
-    // Reactive - resetuj serviceDetail gdy zmienia się service
-    $: if (formData.service) {
-        formData.serviceDetail = '';
+    let previousService = formData.service;
+    
+    // Reactive - resetuj serviceDetail TYLKO gdy zmienia się service
+    $: {
+        if (formData.service !== previousService) {
+            formData.serviceDetail = '';
+            previousService = formData.service;
+        }
     }
     
     let isSubmitting = false;
