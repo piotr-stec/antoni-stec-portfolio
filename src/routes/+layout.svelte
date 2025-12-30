@@ -1,7 +1,9 @@
 <script>
 	import '../app.css';
     import Navbar from '$lib/components/Navbar.svelte';
-    import { SpeedInsights } from '@vercel/speed-insights/sveltekit';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+    injectSpeedInsights();
 </script>
 
 <svelte:head>
@@ -77,8 +79,6 @@
 		<slot />
 	</main>
 </div>
-
-<SpeedInsights />
 
 <style>
     :global(body) {
