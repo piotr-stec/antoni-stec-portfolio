@@ -6,7 +6,7 @@
         </div>
         <div class="socials">
             <a href="https://www.instagram.com/stec.antoni/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="mailto:kontakt@antek-foto.pl">Email</a>
+            <a href="mailto:antoni.stec82@gmail.com">Email</a>
         </div>
         <div class="copyright">
             <p>&copy; 2025 Antek Portfolio. Wszelkie prawa zastrzeżone.</p>

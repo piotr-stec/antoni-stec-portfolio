@@ -9,9 +9,44 @@
         name: '',
         email: '',
         service: 'motoryzacja',
+        serviceDetail: '',
         date: '',
         message: ''
     };
+    
+    // Opcje szczegółowe dla każdego typu usługi
+    const serviceDetails = {
+        motoryzacja: [
+            'Sesja sprzedażowa',
+            'Sesja na Instagram/TikTok',
+            'Pakiet foto + wideo',
+            'Tylko zdjęcia',
+            'Tylko wideo',
+            'Inne'
+        ],
+        wnetrza: [
+            'Mieszkanie na sprzedaż',
+            'Mieszkanie na wynajem',
+            'Dom na sprzedaż',
+            'Lokal komercyjny',
+            'Airbnb',
+            'Inne'
+        ],
+        event: [
+            'Otwarcie lokalu',
+            'Impreza firmowa',
+            'Konferencja',
+            'Koncert/wydarzenie kulturalne',
+            'Sesja reportażowa',
+            'Inne'
+        ],
+        inne: []
+    };
+    
+    // Reactive - resetuj serviceDetail gdy zmienia się service
+    $: if (formData.service) {
+        formData.serviceDetail = '';
+    }
     
     let isSubmitting = false;
     let submitStatus = null; // 'success' | 'error' | null
@@ -65,6 +100,7 @@
                     name: '',
                     email: '',
                     service: 'motoryzacja',
+                    serviceDetail: '',
                     date: '',
                     message: ''
                 };
@@ -95,7 +131,7 @@
                 
                 <div class="info-item">
                     <strong>Email</strong>
-                    <p>kontakt@antek-foto.pl</p>
+                    <p>antoni.stec82@gmail.com</p>
                 </div>
                 <div class="info-item">
                     <strong>Instagram</strong>
@@ -147,6 +183,22 @@
                         <option value="inne">Inne</option>
                     </select>
                 </div>
+
+                {#if serviceDetails[formData.service] && serviceDetails[formData.service].length > 0}
+                    <div class="form-group">
+                        <label for="serviceDetail">Szczegóły</label>
+                        <select 
+                            id="serviceDetail"
+                            bind:value={formData.serviceDetail}
+                            disabled={isSubmitting}
+                        >
+                            <option value="">Wybierz...</option>
+                            {#each serviceDetails[formData.service] as detail}
+                                <option value={detail}>{detail}</option>
+                            {/each}
+                        </select>
+                    </div>
+                {/if}
 
                 <div class="form-group">
                     <label for="date">Preferowany termin</label>
@@ -272,12 +324,22 @@
         background: #1a1a1a;
         padding: 15px 10px;
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     
     :global(.flatpickr-current-month) {
         color: #fff;
         font-size: 18px;
         font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        flex: 1;
+        padding: 0 50px;
     }
     
     :global(.flatpickr-month) {
@@ -289,6 +351,29 @@
     .flatpickr-months .flatpickr-next-month) {
         fill: #fff;
         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    :global(.flatpickr-months .flatpickr-prev-month) {
+        left: 10px;
+    }
+    
+    :global(.flatpickr-months .flatpickr-next-month) {
+        right: 10px;
+    }
+    
+    :global(.flatpickr-months .flatpickr-prev-month svg,
+    .flatpickr-months .flatpickr-next-month svg) {
+        width: 14px;
+        height: 14px;
     }
     
     :global(.flatpickr-months .flatpickr-prev-month:hover,
@@ -300,6 +385,67 @@
     :global(.flatpickr-months .flatpickr-prev-month:hover svg,
     .flatpickr-months .flatpickr-next-month:hover svg) {
         fill: #fff;
+    }
+    
+    /* Dropdown miesięcy - lepsze style */
+    :global(.flatpickr-monthDropdown-months) {
+        background: #1a1a1a !important;
+        border: 1px solid #444 !important;
+        border-radius: 6px;
+    }
+    
+    :global(.flatpickr-monthDropdown-months option) {
+        background: #1a1a1a !important;
+        color: #fff !important;
+        padding: 8px 12px;
+    }
+    
+    :global(.flatpickr-monthDropdown-months option:hover) {
+        background: #2a2a2a !important;
+    }
+    
+    :global(select.flatpickr-monthDropdown-months) {
+        background-color: #1a1a1a !important;
+        color: #fff !important;
+    }
+    
+    /* Input roku - lepsze style */
+    :global(.numInputWrapper) {
+        background: transparent !important;
+    }
+    
+    :global(.numInputWrapper:hover) {
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+    
+    :global(input.numInput.cur-year) {
+        color: #fff !important;
+        font-weight: 600 !important;
+        background: transparent !important;
+    }
+    
+    :global(input.numInput.cur-year:hover) {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    :global(input.numInput.cur-year:focus) {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    :global(.numInputWrapper span.arrowUp) {
+        border-bottom-color: #fff !important;
+    }
+    
+    :global(.numInputWrapper span.arrowDown) {
+        border-top-color: #fff !important;
+    }
+    
+    :global(.numInputWrapper span.arrowUp:after) {
+        border-bottom-color: #fff !important;
+    }
+    
+    :global(.numInputWrapper span.arrowDown:after) {
+        border-top-color: #fff !important;
     }
     
     :global(.flatpickr-weekdays) {

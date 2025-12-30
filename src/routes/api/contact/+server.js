@@ -4,7 +4,7 @@ import { GOOGLE_EMAIL, GOOGLE_APP_PASSWORD, RECIPIENT_EMAIL } from '$env/static/
 
 export async function POST({ request }) {
 	try {
-		const { name, email, service, date, message } = await request.json();
+		const { name, email, service, serviceDetail, date, message } = await request.json();
 
 		// Walidacja danych
 		if (!name || !email || !message) {
@@ -25,7 +25,7 @@ export async function POST({ request }) {
 			from: GOOGLE_EMAIL,
 			to: RECIPIENT_EMAIL || GOOGLE_EMAIL,
 			replyTo: email,
-			subject: `Nowe zapytanie z portfolio: ${service}`,
+			subject: `Nowe zapytanie z portfolio: ${service}${serviceDetail ? ' - ' + serviceDetail : ''}`,
 			html: `
 				<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
 					<h2 style="color: #333;">Nowe zapytanie ofertowe</h2>
@@ -34,6 +34,7 @@ export async function POST({ request }) {
 						<p style="margin: 10px 0;"><strong>Imię:</strong> ${name}</p>
 						<p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
 						<p style="margin: 10px 0;"><strong>Typ usługi:</strong> ${service}</p>
+						${serviceDetail ? `<p style="margin: 10px 0;"><strong>Szczegóły:</strong> ${serviceDetail}</p>` : ''}
 						${date ? `<p style="margin: 10px 0;"><strong>Preferowany termin:</strong> ${date}</p>` : ''}
 					</div>
 					
