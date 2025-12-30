@@ -10,7 +10,7 @@
             subtitle: 'Zdjęcia i filmy, które budzą emocje'
         },
         {
-            image: '/wnętrze_toyota.jpg',
+            image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2560&auto=format&fit=crop',
             title: 'Nieruchomości',
             subtitle: 'Profesjonalna prezentacja nieruchomości'
         },
