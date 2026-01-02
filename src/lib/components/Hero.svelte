@@ -5,7 +5,7 @@
 
     const slides = [
         {
-            image: '/SUBARU-2611.jpg',
+            image: '/banery_karuzela_hero/motoryzacja_desktop.jpg',
             title: 'Motoryzacja',
             subtitle: 'Zdjęcia i filmy, które budzą emocje'
         },
@@ -15,14 +15,14 @@
             subtitle: 'Profesjonalna prezentacja nieruchomości'
         },
         {
-            image: '/cloud laser-5971.jpg',
-            mobileImage: '/cloud laser-6041.jpg',
+            image: '/banery_karuzela_hero/eventy_desktop.jpg',
+            mobileImage: '/banery_karuzela_hero/eventy_mobilne.jpg',
             title: 'Eventy',
             subtitle: 'Chwile warte zapamiętania'
         },
         {
-            image: '/baner_sesje_produktowe.png',
-            mobileImage: '/pion baner.jpg',
+            image: '/banery_karuzela_hero/produktowe_desktop.jpg',
+            mobileImage: '/banery_karuzela_hero/produktowe_mobilne.jpg',
             title: 'Sesje Produktowe',
             subtitle: 'Pokaż swoje produkty w najlepszym świetle'
         }
