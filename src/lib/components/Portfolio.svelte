@@ -104,9 +104,33 @@
             id: 8, 
             category: 'event', 
             src: '/portfolio/eventy/01.jpg', 
-            alt: 'Laser Show', 
+            alt: 'Laser', 
             title: 'EVENTY',
             gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg']
+        },
+        { 
+            id: 9, 
+            category: 'interior', 
+            src: '/portfolio/nieruchomosci/01.jpg', 
+            alt: 'Wnętrze', 
+            title: 'WNĘTRZA',
+            gallery: ['/portfolio/nieruchomosci/01.jpg']
+        },
+        { 
+            id: 10, 
+            category: 'products', 
+            src: '/portfolio/produkty/casualique/green01.jpg', 
+            alt: 'Produktowe', 
+            title: 'SESJE PRODUKTOWE',
+            gallery: [ '/portfolio/produkty/casualique/green01.jpg', '/portfolio/produkty/casualique/green02.jpg','/portfolio/produkty/casualique/green03.jpg']
+        },
+        { 
+            id: 11, 
+            category: 'products', 
+            src: '/portfolio/produkty/casualique/red02.jpg', 
+            alt: 'Produktowe', 
+            title: 'SESJE PRODUKTOWE',
+            gallery: [ '/portfolio/produkty/casualique/red01.jpg', '/portfolio/produkty/casualique/red02.jpg', '/portfolio/produkty/casualique/red03.jpg' ]
         }
     ];
 
@@ -177,6 +201,7 @@
             <button class:active={activeFilter === 'auto'} on:click={() => setFilter('auto')}>Motoryzacja</button>
             <button class:active={activeFilter === 'interior'} on:click={() => setFilter('interior')}>Nieruchomości</button>
             <button class:active={activeFilter === 'event'} on:click={() => setFilter('event')}>Eventy</button>
+            <button class:active={activeFilter === 'products'} on:click={() => setFilter('products')}>Produkty</button>
         </div>
 
         <div class="gallery">
