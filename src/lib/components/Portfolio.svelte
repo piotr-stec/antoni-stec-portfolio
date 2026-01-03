@@ -10,110 +10,103 @@
         { 
             id: 1, 
             category: 'auto', 
-            src: '/bmw m6 edit-1493.jpg', 
+            src: '/portfolio/motoryzacja/m6/01.jpg', 
             alt: 'BMW M6', 
             title: 'BMW M6',
             gallery: [
-                '/M6/bmw m6 edit-1504.jpg',
-                '/M6/m6.jpg',
-                '/M6/m6(1).jpg',
-                '/M6/m6(2).jpg'
+                '/portfolio/motoryzacja/m6/01.jpg',
+                '/portfolio/motoryzacja/m6/02.jpg',
+                '/portfolio/motoryzacja/m6/03.jpg',
+                '/portfolio/motoryzacja/m6/04.jpg',
             ]
         },
         { 
             id: 2, 
             category: 'auto', 
-            src: '/SUBARU-2611.jpg', 
+            src: '/portfolio/motoryzacja/subaru/01.jpg', 
             alt: 'Subaru', 
             title: 'SUBARU',
             gallery: [
-                '/SUBARU/SUBARU-2580.jpg',
-                '/SUBARU/SUBARU-2600.jpg',
-                '/SUBARU/SUBARU-2659.jpg'
+                '/portfolio/motoryzacja/subaru/01.jpg',
+                '/portfolio/motoryzacja/subaru/02.jpg',
+                '/portfolio/motoryzacja/subaru/03.jpg',
+                '/portfolio/motoryzacja/subaru/04.jpg',
+                '/portfolio/motoryzacja/subaru/05.jpg',
+                '/portfolio/motoryzacja/subaru/06.jpg'
             ]
         },
         { 
             id: 3, 
             category: 'auto', 
-            src: '/saab-4835.jpg', 
+            src: '/portfolio/motoryzacja/saab/01.jpg', 
             alt: 'Saab', 
             title: 'SAAB',
             gallery: [
-                '/SAAB/saab-4835.jpg',
-                '/SAAB/saab ikea-5038.jpg',
-                '/SAAB/saab ikea-5089.jpg',
-                '/SAAB/saab ikea-5172.jpg',
-                '/SAAB/saab-4890.jpg',
-                '/SAAB/saab-4904.jpg'
+                '/portfolio/motoryzacja/saab/01.jpg',
+                '/portfolio/motoryzacja/saab/02.jpg',
+                '/portfolio/motoryzacja/saab/03.jpg',
+                '/portfolio/motoryzacja/saab/04.jpg',
+                '/portfolio/motoryzacja/saab/05.jpg',
+                '/portfolio/motoryzacja/saab/06.jpg'
             ]
         },
         { 
             id: 4, 
             category: 'auto', 
-            src: '/M850I/Bmw_m850i-2694.jpg', 
+            src: '/portfolio/motoryzacja/m850i/01.jpg', 
             alt: 'BMW 8', 
             title: 'BMW M850i',
             gallery: [
-                '/M850I/Bmw_m850i-2694.jpg',
-                '/M850I/Bmw_m850i-2837.jpg'
+                '/portfolio/motoryzacja/m850i/01.jpg',
+                '/portfolio/motoryzacja/m850i/02.jpg'
             ]
         },
         { 
             id: 5, 
             category: 'auto', 
-            src: '/JEEP-3862.jpg', 
+            src: '/portfolio/motoryzacja/jeep/01.jpg', 
             alt: 'Jeep', 
             title: 'JEEP',
             gallery: [
-                '/JEEP/JEEP-3862.jpg',
-                '/JEEP/JEEP-3783.jpg',
-                '/JEEP/JEEP-3837.jpg',
-                '/JEEP/JEEP-3935.jpg'
+                '/portfolio/motoryzacja/jeep/01.jpg',
+                '/portfolio/motoryzacja/jeep/02.jpg',
+                '/portfolio/motoryzacja/jeep/03.jpg',
+                '/portfolio/motoryzacja/jeep/04.jpg'
             ]
         },
         { 
             id: 6, 
             category: 'auto', 
-            src: '/yaris.jpg', 
+            src: '/portfolio/motoryzacja/yaris/01.jpg', 
             alt: 'Yaris', 
             title: 'TOYOTA YARIS',
             gallery: [
-                '/YARIS/yaris.jpg',
-                '/YARIS/yaris(1).jpg',
-                '/YARIS/yaris(2).jpg'
+                '/portfolio/motoryzacja/yaris/01.jpg',
+                '/portfolio/motoryzacja/yaris/02.jpg',
+                '/portfolio/motoryzacja/yaris/03.jpg'
             ]
         },
         { 
             id: 7, 
             category: 'auto', 
-            src: '/M8-5471.jpg', 
+            src: '/portfolio/motoryzacja/m8/01.jpg', 
             alt: 'BMW M8', 
             title: 'BMW M8',
             gallery: [
-                '/M8/M8.jpg',
-                '/M8/M8(1).jpg',
-                '/M8/M8(2).jpg',
-                '/M8/M8(3).jpg',
-                '/M8/subaru.jpg',
-                '/M8/subaru(1).jpg',
-                '/M8/subaru(2).jpg'
+                '/portfolio/motoryzacja/m8/01.jpg',
+                '/portfolio/motoryzacja/m8/02.jpg',
+                '/portfolio/motoryzacja/m8/03.jpg',
+                '/portfolio/motoryzacja/m8/04.jpg',
             ]
         },
+
         { 
             id: 8, 
-            category: 'interior', 
-            src: '/wnętrze_toyota.jpg', 
-            alt: 'Wnętrze Toyota', 
-            title: 'WNĘTRZA',
-            gallery: ['/wnętrze_toyota.jpg', '/hilux.png']
-        },
-        { 
-            id: 9, 
             category: 'event', 
-            src: '/cloud laser-6041.jpg', 
+            src: '/portfolio/eventy/01.jpg', 
             alt: 'Laser Show', 
             title: 'EVENTY',
-            gallery: ['/cloud laser-6041.jpg', '/cloud laser-5971.jpg']
+            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg']
         }
     ];
 

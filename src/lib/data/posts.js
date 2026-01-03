@@ -4,7 +4,7 @@ export const posts = [
         title: 'Dlaczego warto inwestować w rolki na Instagramie?',
         excerpt: 'Krótkie formy wideo to obecnie najskuteczniejszy sposób na zasięgi. Zobacz, jak profesjonalna rolka może zmienić odbiór Twojej marki.',
         date: '2024-03-15',
-        coverImage: '/cloud laser-6041.jpg',
+        coverImage: '/portfolio/eventy/01.jpg',
         content: `
             <p>W dzisiejszych czasach uwaga odbiorcy jest na wagę złota. Statystyki pokazują, że formaty wideo, a w szczególności Reels (Rolki) na Instagramie oraz TikToki, generują znacznie wyższe zaangażowanie niż tradycyjne zdjęcia.</p>
             
@@ -23,7 +23,7 @@ export const posts = [
         title: 'Jak przygotować auto do sesji zdjęciowej?',
         excerpt: 'Czystość to podstawa, ale detale robią różnicę. Poradnik dla właścicieli aut i dealerów przed przyjazdem fotografa.',
         date: '2024-02-28',
-        coverImage: '/bmw m6 edit-1493.jpg',
+        coverImage: '/portfolio/motoryzacja/jeep/01.jpg',
         content: `
             <p>Nawet najlepszy fotograf i najdroższy sprzęt nie ukryją brudu na karoserii (choć Photoshop potrafi cuda, to zajmuje to mnóstwo czasu i kosztuje). Aby sesja przebiegła sprawnie, a efekty były powalające, warto zadbać o kilka kwestii.</p>
 
@@ -42,7 +42,7 @@ export const posts = [
         title: 'Czy zdjęcia przyspieszają sprzedaż nieruchomości?',
         excerpt: 'Pierwsze wrażenie robisz tylko raz. Dowiedz się, dlaczego profesjonalna sesja wnętrza zwraca się z nawiązką.',
         date: '2024-01-10',
-        coverImage: '/wnętrze_toyota.jpg',
+        coverImage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2560&auto=format&fit=crop',
         content: `
             <p>Przeglądając portale ogłoszeniowe, nasz wzrok automatycznie wędruje do ofert z jasnymi, szerokimi i ostrymi zdjęciami. Ciemne, poruszone fotografie robione telefonem często są pomijane, nawet jeśli sama nieruchomość jest atrakcyjna.</p>
 

@@ -9,7 +9,7 @@
             <a href="mailto:antoni.stec82@gmail.com">Email</a>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Antek Portfolio. Wszelkie prawa zastrzeżone.</p>
+            <p>&copy; 2025 Antoni Stec. Wszelkie prawa zastrzeżone.</p>
             <p class="small">Wyceny indywidualne – odpowiedź mailowa.</p>
         </div>
     </div>
