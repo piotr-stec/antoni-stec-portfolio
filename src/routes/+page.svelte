@@ -18,7 +18,7 @@
 
 <svelte:head>
     <!-- Preload hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/SUBARU-2611.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/portfolio/motoryzacja/subaru/01.jpg" fetchpriority="high">
 </svelte:head>
 
 <Hero {scrollToQuote} />

@@ -10,7 +10,7 @@
                 { title: "Rolka Instagram/TikTok", range: "150 – 180 zł", details: "Dynamiczny montaż, muzyka, color grading, format pionowy." },
                 { title: "Pakiet Foto + Wideo", range: "350 – 400 zł", details: "Komplet materiałów z jednego spotkania." }
             ],
-            image: "/Bmw m830i-2694.jpg"
+            image: "/portfolio/motoryzacja/m8/01.jpg"
         },
         {
             category: "Eventy i Reportaż",
@@ -19,7 +19,7 @@
                 { title: "Rolka eventowa", range: "250 – 300 zł", details: "Skrót wydarzenia, idealny do promocji w social media." },
                 { title: "Reportaż zdjęciowy", range: "120 – 150 zł / h", details: "Selekcja najlepszych ujęć, pełna postprodukcja." }
             ],
-            image: "/cloud laser-6041.jpg"
+            image: "/portfolio/eventy/01.jpg"
         },
         {
             category: "Nieruchomości",
@@ -27,7 +27,15 @@
             offers: [
                 { title: "Sesja mieszkania / lokalu", range: "150 – 200 zł", details: "Szerokie kadry, HDR, usuwanie niedoskonałości." }
             ],
-            image: "/wnętrze_toyota.jpg"
+            image: "/portfolio/nieruchomosci/01.jpg"
+        },
+        {
+            category: "Produkty",
+            description: "Profesjonalne zdjęcia produktów na potrzeby sprzedaży lub promocji. Zwiększ atrakcyjność oferty.",
+            offers: [
+                { title: "Sesja produktu", range: "150 – 200 zł", details: "Zdjęcia w namiocie bezcieniowym." }
+            ],
+            image: "/portfolio/produkty/casualique/bluza001.jpg"
         }
     ];
 
