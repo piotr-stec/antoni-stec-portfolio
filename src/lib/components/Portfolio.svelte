@@ -2,14 +2,15 @@
     import { fade, scale } from 'svelte/transition';
     import { flip } from 'svelte/animate';
 
-    let activeFilter = 'all';
+    let activeFilter = 'featured';
     let selectedItem = null;
     let currentGalleryIndex = 0;
 
     const portfolioItems = [
         { 
             id: 1, 
-            category: 'auto', 
+            category: 'auto',
+            featured: false,
             src: '/portfolio/motoryzacja/m6/01.jpg', 
             alt: 'BMW M6', 
             title: 'BMW M6',
@@ -22,7 +23,8 @@
         },
         { 
             id: 2, 
-            category: 'auto', 
+            category: 'auto',
+            featured: false,
             src: '/portfolio/motoryzacja/subaru/01.jpg', 
             alt: 'Subaru', 
             title: 'SUBARU',
@@ -37,8 +39,9 @@
         },
         { 
             id: 3, 
-            category: 'auto', 
-            src: '/portfolio/motoryzacja/saab/01.jpg', 
+            category: 'auto',
+            featured: true,
+            src: '/portfolio/motoryzacja/saab/02.jpg', 
             alt: 'Saab', 
             title: 'SAAB',
             gallery: [
@@ -52,7 +55,8 @@
         },
         { 
             id: 4, 
-            category: 'auto', 
+            category: 'auto',
+            featured: false,
             src: '/portfolio/motoryzacja/m850i/01.jpg', 
             alt: 'BMW 8', 
             title: 'BMW M850i',
@@ -63,7 +67,8 @@
         },
         { 
             id: 5, 
-            category: 'auto', 
+            category: 'auto',
+            featured: false,
             src: '/portfolio/motoryzacja/jeep/01.jpg', 
             alt: 'Jeep', 
             title: 'JEEP',
@@ -74,9 +79,24 @@
                 '/portfolio/motoryzacja/jeep/04.jpg'
             ]
         },
-        { 
+                { 
             id: 6, 
-            category: 'auto', 
+            category: 'auto',
+            featured: true,
+            src: '/portfolio/motoryzacja/m8/02.jpg', 
+            alt: 'BMW M8', 
+            title: 'BMW M8',
+            gallery: [
+                '/portfolio/motoryzacja/m8/01.jpg',
+                '/portfolio/motoryzacja/m8/02.jpg',
+                '/portfolio/motoryzacja/m8/03.jpg',
+                '/portfolio/motoryzacja/m8/04.jpg',
+            ]
+        },
+        { 
+            id: 7, 
+            category: 'auto',
+            featured: true,
             src: '/portfolio/motoryzacja/yaris/01.jpg', 
             alt: 'Yaris', 
             title: 'TOYOTA YARIS',
@@ -87,22 +107,9 @@
             ]
         },
         { 
-            id: 7, 
-            category: 'auto', 
-            src: '/portfolio/motoryzacja/m8/01.jpg', 
-            alt: 'BMW M8', 
-            title: 'BMW M8',
-            gallery: [
-                '/portfolio/motoryzacja/m8/01.jpg',
-                '/portfolio/motoryzacja/m8/02.jpg',
-                '/portfolio/motoryzacja/m8/03.jpg',
-                '/portfolio/motoryzacja/m8/04.jpg',
-            ]
-        },
-
-        { 
             id: 8, 
-            category: 'event', 
+            category: 'event',
+            featured: false,
             src: '/portfolio/eventy/01.jpg', 
             alt: 'Laser', 
             title: 'EVENTY',
@@ -110,7 +117,8 @@
         },
         { 
             id: 9, 
-            category: 'interior', 
+            category: 'interior',
+            featured: false,
             src: '/portfolio/nieruchomosci/01.jpg', 
             alt: 'Wnętrze', 
             title: 'WNĘTRZA',
@@ -118,24 +126,65 @@
         },
         { 
             id: 10, 
-            category: 'products', 
-            src: '/portfolio/produkty/casualique/green01.jpg', 
+            category: 'products',
+            featured: true,
+            src: '/portfolio/produkty/casualique/bluza001.jpg', 
             alt: 'Produktowe', 
             title: 'SESJE PRODUKTOWE',
-            gallery: [ '/portfolio/produkty/casualique/green01.jpg', '/portfolio/produkty/casualique/green02.jpg','/portfolio/produkty/casualique/green03.jpg']
+            gallery: [ '/portfolio/produkty/casualique/bluza01.jpg', '/portfolio/produkty/casualique/bluza02.jpg', '/portfolio/produkty/casualique/bluza03.jpg' ]
         },
         { 
             id: 11, 
-            category: 'products', 
+            category: 'products',
+            featured: true,
+            src: '/portfolio/produkty/casualique/green01.jpg', 
+            alt: 'Produktowe', 
+            title: 'SESJE PRODUKTOWE',
+            gallery: [ '/portfolio/produkty/casualique/green01.jpg', '/portfolio/produkty/casualique/green02.jpg','/portfolio/produkty/casualique/green03.jpg', '/portfolio/produkty/casualique/green04.jpg', '/portfolio/produkty/casualique/green05.jpg' ]
+        },
+        { 
+            id: 12, 
+            category: 'products',
+            featured: true,
             src: '/portfolio/produkty/casualique/red02.jpg', 
             alt: 'Produktowe', 
             title: 'SESJE PRODUKTOWE',
-            gallery: [ '/portfolio/produkty/casualique/red01.jpg', '/portfolio/produkty/casualique/red02.jpg', '/portfolio/produkty/casualique/red03.jpg' ]
-        }
+            gallery: [ '/portfolio/produkty/casualique/red01.jpg', '/portfolio/produkty/casualique/red02.jpg', '/portfolio/produkty/casualique/red03.jpg','/portfolio/produkty/casualique/red04.jpg', '/portfolio/produkty/casualique/red05.jpg'  ]
+        },
+                { 
+            id: 13, 
+            category: 'event',
+            featured: true,
+            src: '/portfolio/eventy/01.jpg', 
+            alt: 'Laser', 
+            title: 'EVENTY',
+            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+        },
+                { 
+            id: 14, 
+            category: 'event',
+            featured: true,
+            src: '/portfolio/eventy/02.jpg', 
+            alt: 'Laser', 
+            title: 'EVENTY',
+            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+        },
+{ 
+            id: 15, 
+            category: 'event',
+            featured: true,
+            src: '/portfolio/eventy/03.jpg', 
+            alt: 'Laser', 
+            title: 'EVENTY',
+            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+        },
+        
     ];
 
     $: filteredItems = activeFilter === 'all' 
         ? portfolioItems 
+        : activeFilter === 'featured'
+        ? portfolioItems.filter(item => item.featured)
         : portfolioItems.filter(item => item.category === activeFilter);
 
     function setFilter(filter) {
@@ -197,6 +246,7 @@
         <h2 class="section-title">Portfolio</h2>
         
         <div class="filters">
+            <button class:active={activeFilter === 'featured'} on:click={() => setFilter('featured')}>Wyróżnione</button>
             <button class:active={activeFilter === 'all'} on:click={() => setFilter('all')}>Wszystkie</button>
             <button class:active={activeFilter === 'auto'} on:click={() => setFilter('auto')}>Motoryzacja</button>
             <button class:active={activeFilter === 'interior'} on:click={() => setFilter('interior')}>Nieruchomości</button>
