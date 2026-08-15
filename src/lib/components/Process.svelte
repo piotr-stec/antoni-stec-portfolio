@@ -1,4 +1,4 @@
-<section id="process">
+<section id="wspolpraca">
     <div class="container">
         <h2 class="section-title">Jak wygląda współpraca?</h2>
         <div class="steps">

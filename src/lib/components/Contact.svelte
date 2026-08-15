@@ -3,7 +3,7 @@
     import flatpickr from 'flatpickr';
     import 'flatpickr/dist/flatpickr.min.css';
     
-    export let id = "contact";
+    export let id = "kontakt";
     
     let formData = {
         name: '',
