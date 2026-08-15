@@ -29,11 +29,12 @@
         
         <div class="desktop-menu">
             <a href="/#start">Start</a>
-            <a href="/#offer">Oferta</a>
+            <a href="/#oferta">Oferta</a>
+            <a href="/oferta/motoryzacja">Motoryzacja</a>
             <a href="/#portfolio">Portfolio</a>
-            <a href="/#process">Współpraca</a>
+            <a href="/cennik">Cennik</a>
             <a href="/blog">Blog</a>
-            <a href="/#contact" class="btn btn-primary btn-sm">Kontakt</a>
+            <a href="/kontakt" class="btn btn-primary btn-sm">Kontakt</a>
         </div>
 
         <button class="hamburger" on:click={toggleMenu} aria-label="Menu">
@@ -46,11 +47,12 @@
     {#if mobileMenuOpen}
         <div class="mobile-menu" transition:slide={{duration: 300}}>
             <a href="/#start" on:click={closeMenu}>Start</a>
-            <a href="/#offer" on:click={closeMenu}>Oferta</a>
+            <a href="/#oferta" on:click={closeMenu}>Oferta</a>
+            <a href="/oferta/motoryzacja" on:click={closeMenu}>Motoryzacja</a>
             <a href="/#portfolio" on:click={closeMenu}>Portfolio</a>
-            <a href="/#process" on:click={closeMenu}>Współpraca</a>
+            <a href="/cennik" on:click={closeMenu}>Cennik</a>
             <a href="/blog" on:click={closeMenu}>Blog</a>
-            <a href="/#contact" on:click={closeMenu}>Kontakt</a>
+            <a href="/kontakt" on:click={closeMenu}>Kontakt</a>
         </div>
     {/if}
 </nav>
@@ -105,6 +107,14 @@
 
     .desktop-menu a:hover {
         color: #fff;
+    }
+
+    .desktop-menu a.btn-primary {
+        color: #000;
+    }
+
+    .desktop-menu a.btn-primary:hover {
+        color: #000;
     }
 
     .btn-sm {

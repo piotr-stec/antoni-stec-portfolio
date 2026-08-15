@@ -1,8 +1,20 @@
 <script>
+    import { page } from '$app/stores';
+    import { browser } from '$app/environment';
     import { fade, scale } from 'svelte/transition';
     import { flip } from 'svelte/animate';
 
     let activeFilter = 'featured';
+    
+    $: {
+        if (browser) {
+            const queryFilter = $page.url.searchParams.get('filter');
+            if (queryFilter && ['featured', 'all', 'auto', 'interior', 'event', 'products'].includes(queryFilter)) {
+                activeFilter = queryFilter;
+            }
+        }
+    }
+
     let selectedItem = null;
     let currentGalleryIndex = 0;
 
@@ -12,7 +24,7 @@
             category: 'auto',
             featured: false,
             src: '/portfolio/motoryzacja/m6/01.jpg', 
-            alt: 'BMW M6', 
+            alt: 'BMW M6 – sesja zdjęciowa samochodu na sprzedaż, fotografia motoryzacyjna Lublin', 
             title: 'BMW M6',
             gallery: [
                 '/portfolio/motoryzacja/m6/01.jpg',
@@ -26,7 +38,7 @@
             category: 'auto',
             featured: false,
             src: '/portfolio/motoryzacja/subaru/01.jpg', 
-            alt: 'Subaru', 
+            alt: 'Subaru – profesjonalna fotografia motoryzacyjna, sesja auta na sprzedaż Lublin', 
             title: 'SUBARU',
             gallery: [
                 '/portfolio/motoryzacja/subaru/01.jpg',
@@ -42,7 +54,7 @@
             category: 'auto',
             featured: true,
             src: '/portfolio/motoryzacja/saab/02.jpg', 
-            alt: 'Saab', 
+            alt: 'Saab – sesja zdjęciowa samochodu, fotografia motoryzacyjna w plenerze Lublin', 
             title: 'SAAB',
             gallery: [
                 '/portfolio/motoryzacja/saab/01.jpg',
@@ -58,7 +70,7 @@
             category: 'auto',
             featured: false,
             src: '/portfolio/motoryzacja/m850i/01.jpg', 
-            alt: 'BMW 8', 
+            alt: 'BMW M850i – luksusowa fotografia motoryzacyjna, sesja auta dla dealera Lublin', 
             title: 'BMW M850i',
             gallery: [
                 '/portfolio/motoryzacja/m850i/01.jpg',
@@ -70,7 +82,7 @@
             category: 'auto',
             featured: false,
             src: '/portfolio/motoryzacja/jeep/01.jpg', 
-            alt: 'Jeep', 
+            alt: 'Jeep – terenowa sesja zdjęciowa samochodu, fotografia motoryzacyjna Lublin', 
             title: 'JEEP',
             gallery: [
                 '/portfolio/motoryzacja/jeep/01.jpg',
@@ -79,12 +91,12 @@
                 '/portfolio/motoryzacja/jeep/04.jpg'
             ]
         },
-                { 
+        { 
             id: 6, 
             category: 'auto',
             featured: true,
             src: '/portfolio/motoryzacja/m8/02.jpg', 
-            alt: 'BMW M8', 
+            alt: 'BMW M8 – dynamiczna sesja motoryzacyjna dla salonu samochodowego, Lublin', 
             title: 'BMW M8',
             gallery: [
                 '/portfolio/motoryzacja/m8/01.jpg',
@@ -98,7 +110,7 @@
             category: 'auto',
             featured: true,
             src: '/portfolio/motoryzacja/yaris/01.jpg', 
-            alt: 'Yaris', 
+            alt: 'Toyota Yaris – sesja sprzedażowa samochodu, zdjęcia aut na sprzedaż Lublin', 
             title: 'TOYOTA YARIS',
             gallery: [
                 '/portfolio/motoryzacja/yaris/01.jpg',
@@ -111,7 +123,7 @@
             category: 'event',
             featured: false,
             src: '/portfolio/eventy/01.jpg', 
-            alt: 'Laser', 
+            alt: 'Reportaż z eventu – fotografia imprezowa i relacja ze zlotu, Lublin', 
             title: 'EVENTY',
             gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg']
         },
@@ -120,7 +132,7 @@
             category: 'interior',
             featured: false,
             src: '/portfolio/nieruchomosci/01.jpg', 
-            alt: 'Wnętrze', 
+            alt: 'Zdjęcia wnętrz nieruchomości na sprzedaż – profesjonalna fotografia mieszkań Lublin', 
             title: 'WNĘTRZA',
             gallery: ['/portfolio/nieruchomosci/01.jpg']
         },
@@ -129,7 +141,7 @@
             category: 'products',
             featured: true,
             src: '/portfolio/produkty/casualique/bluza001.jpg', 
-            alt: 'Produktowe', 
+            alt: 'Sesja produktowa bluzy – zdjęcia odzieży na białym tle do sklepu internetowego', 
             title: 'SESJE PRODUKTOWE',
             gallery: [ '/portfolio/produkty/casualique/bluza01.jpg', '/portfolio/produkty/casualique/bluza02.jpg', '/portfolio/produkty/casualique/bluza03.jpg' ]
         },
@@ -138,7 +150,7 @@
             category: 'products',
             featured: true,
             src: '/portfolio/produkty/casualique/green01.jpg', 
-            alt: 'Produktowe', 
+            alt: 'Sesja produktowa zielonej odzieży – fotografia produktów e-commerce', 
             title: 'SESJE PRODUKTOWE',
             gallery: [ '/portfolio/produkty/casualique/green01.jpg', '/portfolio/produkty/casualique/green02.jpg','/portfolio/produkty/casualique/green03.jpg', '/portfolio/produkty/casualique/green04.jpg', '/portfolio/produkty/casualique/green05.jpg' ]
         },
@@ -147,34 +159,34 @@
             category: 'products',
             featured: true,
             src: '/portfolio/produkty/casualique/red02.jpg', 
-            alt: 'Produktowe', 
+            alt: 'Sesja produktowa czerwonej kolekcji – profesjonalne zdjęcia produktów do sklepu online', 
             title: 'SESJE PRODUKTOWE',
             gallery: [ '/portfolio/produkty/casualique/red01.jpg', '/portfolio/produkty/casualique/red02.jpg', '/portfolio/produkty/casualique/red03.jpg','/portfolio/produkty/casualique/red04.jpg', '/portfolio/produkty/casualique/red05.jpg'  ]
         },
-                { 
+        { 
             id: 13, 
             category: 'event',
             featured: true,
             src: '/portfolio/eventy/01.jpg', 
-            alt: 'Laser', 
+            alt: 'Relacja fotograficzna z eventu – fotografia imprez i wydarzeń kulturalnych Lublin', 
             title: 'EVENTY',
             gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
         },
-                { 
+        { 
             id: 14, 
             category: 'event',
             featured: true,
             src: '/portfolio/eventy/02.jpg', 
-            alt: 'Laser', 
+            alt: 'Fotoreportaż z imprezy firmowej – relacja wideo i zdjęciowa Lublin', 
             title: 'EVENTY',
             gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
         },
-{ 
+        { 
             id: 15, 
             category: 'event',
             featured: true,
             src: '/portfolio/eventy/03.jpg', 
-            alt: 'Laser', 
+            alt: 'Zdjęcia z eventu – reportaż ze zlotu i imprezy, fotografia eventowa Lublin', 
             title: 'EVENTY',
             gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
         },

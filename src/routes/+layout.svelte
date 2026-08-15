@@ -8,8 +8,8 @@
 
 <svelte:head>
     <title>Antoni Stec - Foto & Wideo | Motoryzacja, Nieruchomości, Eventy</title>
-    <meta name="description" content="Profesjonalna fotografia i wideo w Krakowie i okolicach. Specjalizacja: motoryzacja, nieruchomości i relacje z eventów. Sprawdź portfolio i ofertę." />
-    <meta name="keywords" content="fotograf motoryzacyjny, filmowanie aut, zdjęcia nieruchomości, fotograf nieruchomości, rolki instagram, wideo promocyjne, Antoni Stec, fotograf Kraków" />
+    <meta name="description" content="Profesjonalna fotografia i wideo w Lublinie i okolicach. Specjalizacja: motoryzacja, nieruchomości i relacje z eventów. Sprawdź portfolio i ofertę." />
+    <meta name="keywords" content="fotograf motoryzacyjny Lublin, filmowanie aut Lublin, zdjęcia nieruchomości Lublin, fotograf nieruchomości, rolki instagram, wideo promocyjne, Antoni Stec, fotograf Lublin" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://antonistec.pl" />
@@ -18,14 +18,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://antonistec.pl" />
     <meta property="og:title" content="Antoni Stec - Foto & Wideo | Motoryzacja, Nieruchomości, Eventy" />
-    <meta property="og:description" content="Tworzę content, który sprzedaje. Zdjęcia i filmy dla motoryzacji i nieruchomości w Krakowie i okolicach." />
+    <meta property="og:description" content="Tworzę content, który sprzedaje. Zdjęcia i filmy dla motoryzacji i nieruchomości w Lublinie i okolicach." />
     <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg" />
     <meta property="og:locale" content="pl_PL" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Antoni Stec - Foto & Wideo" />
-    <meta name="twitter:description" content="Profesjonalna fotografia i wideo w Krakowie. Motoryzacja, nieruchomości, eventy." />
+    <meta name="twitter:description" content="Profesjonalna fotografia i wideo w Lublinie. Motoryzacja, nieruchomości, eventy." />
     <meta name="twitter:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg" />
     
     <!-- Additional SEO -->
@@ -39,22 +39,23 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Antoni Stec - Foto & Wideo",
-      "description": "Profesjonalna fotografia i wideo w Krakowie. Specjalizacja: motoryzacja, nieruchomości, eventy.",
+      "description": "Profesjonalna fotografia i wideo w Lublinie. Specjalizacja: motoryzacja, nieruchomości, eventy.",
       "url": "https://antonistec.pl",
       "logo": "https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg",
       "image": "https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg",
       "priceRange": "150-400 PLN",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Kraków",
+        "addressLocality": "Lublin",
+        "addressRegion": "lubelskie",
         "addressCountry": "PL"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "50.0647",
-        "longitude": "19.9450"
+        "latitude": "51.2465",
+        "longitude": "22.5684"
       },
-      "areaServed": "Kraków i okolice",
+      "areaServed": "Lublin i województwo lubelskie",
       "serviceType": ["Fotografia motoryzacyjna", "Fotografia nieruchomości", "Filmowanie eventów", "Rolki Instagram"]
     }
     </script>

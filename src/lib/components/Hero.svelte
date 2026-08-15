@@ -200,7 +200,7 @@
                             <p class="subtitle">{slide.subtitle}</p>
                             <h1>{slide.title}</h1>
                             <div class="cta-group">
-                                <a href="#offer" class="btn btn-outline" on:mousedown|stopPropagation on:touchstart|stopPropagation>Oferta</a>
+                                <a href="#oferta" class="btn btn-outline" on:mousedown|stopPropagation on:touchstart|stopPropagation>Oferta</a>
                                 <button on:click={scrollToQuote} class="btn btn-primary" on:mousedown|stopPropagation on:touchstart|stopPropagation>Poproś o wycenę</button>
                             </div>
                         </div>

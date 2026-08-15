@@ -1,10 +1,14 @@
 <script>
+    import { page } from '$app/stores';
+    import { browser } from '$app/environment';
     import { slide } from 'svelte/transition';
 
     const services = [
         {
             category: "Motoryzacja",
-            description: "Kompleksowa obsługa wizualna dla pasjonatów i dealerów. Podkreślam charakter każdego pojazdu.",
+            slug: "motoryzacja",
+            portfolioFilter: "auto",
+            description: "Profesjonalna fotografia motoryzacyjna w Lublinie. Realizuję sesje sprzedażowe samochodów (OLX, Otomoto), pakiety foto+wideo dla salonów oraz dynamiczne rolki (TikTok/IG) dla detailerów i komisów.",
             offers: [
                 { title: "Sesja zdjęciowa auta", range: "150 – 250 zł", details: "Ok. 15-20 obrobionych zdjęć, wersje web i print." },
                 { title: "Rolka Instagram/TikTok", range: "150 – 180 zł", details: "Dynamiczny montaż, muzyka, color grading, format pionowy." },
@@ -14,7 +18,9 @@
         },
         {
             category: "Eventy i Reportaż",
-            description: "Dyskretna relacja z wydarzeń, otwarć lokali czy imprez firmowych. Łapię emocje i atmosferę.",
+            slug: "eventy",
+            portfolioFilter: "event",
+            description: "Fotografia eventowa i reportaż w Lublinie. Tworzę profesjonalne relacje z wydarzeń kulturalnych, imprez firmowych, eventów motoryzacyjnych i otwarć lokali, łapiąc unikalne emocje.",
             offers: [
                 { title: "Rolka eventowa", range: "250 – 300 zł", details: "Skrót wydarzenia, idealny do promocji w social media." },
                 { title: "Reportaż zdjęciowy", range: "120 – 150 zł / h", details: "Selekcja najlepszych ujęć, pełna postprodukcja." }
@@ -23,7 +29,9 @@
         },
         {
             category: "Nieruchomości",
-            description: "Profesjonalne zdjęcia wnętrz na potrzeby sprzedaży lub wynajmu. Zwiększ atrakcyjność oferty.",
+            slug: "nieruchomosci",
+            portfolioFilter: "interior",
+            description: "Sesje zdjęciowe nieruchomości na sprzedaż i wynajem w Lublinie. Jasne, przestronne kadry w technice HDR, które wyróżnią Twoje ogłoszenie i przyspieszą transakcję.",
             offers: [
                 { title: "Sesja mieszkania / lokalu", range: "150 – 200 zł", details: "Szerokie kadry, HDR, usuwanie niedoskonałości." }
             ],
@@ -31,7 +39,9 @@
         },
         {
             category: "Produkty",
-            description: "Profesjonalne zdjęcia produktów na potrzeby sprzedaży lub promocji. Zwiększ atrakcyjność oferty.",
+            slug: "produkty",
+            portfolioFilter: "products",
+            description: "Fotografia produktowa e-commerce w Lublinie. Czyste zdjęcia packshotowe na białym tle oraz kreatywne sesje wizerunkowe odzieży, kosmetyków i innych przedmiotów.",
             offers: [
                 { title: "Sesja produktu", range: "150 – 200 zł", details: "Zdjęcia w namiocie bezcieniowym." }
             ],
@@ -40,9 +50,21 @@
     ];
 
     let activeService = 0;
+
+    $: {
+        if (browser) {
+            const queryOferta = $page.url.searchParams.get('oferta');
+            if (queryOferta) {
+                const index = services.findIndex(s => s.slug === queryOferta);
+                if (index !== -1) {
+                    activeService = index;
+                }
+            }
+        }
+    }
 </script>
 
-<section id="offer">
+<section id="oferta">
     <div class="container">
         <h2 class="section-title">Oferta</h2>
         <p class="section-intro">Elastyczne podejście do każdego projektu. Wybierz obszar, który Cię interesuje.</p>
@@ -94,8 +116,14 @@
                             {/each}
                         </div>
                         
-                        <div class="note">
-                            * Podane ceny są orientacyjne i mogą się różnić w zależności od lokalizacji i specyfiki zlecenia.
+                        <div class="note" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                            {#if services[activeService].slug === 'motoryzacja'}
+                                <a href="/oferta/motoryzacja" class="btn btn-primary" style="background-color: #fff; color: #000;">Sprawdź pełną ofertę motoryzacyjną</a>
+                                <a href="/cennik" class="btn btn-outline">Zobacz cennik</a>
+                            {:else}
+                                <a href="/cennik" class="btn btn-primary">Zobacz pełny cennik</a>
+                            {/if}
+                            <a href="/?filter={services[activeService].portfolioFilter}#portfolio" class="btn btn-outline">Zobacz portfolio</a>
                         </div>
                     </div>
                 {/key}

@@ -3,7 +3,14 @@
 </script>
 
 <svelte:head>
-    <title>Blog - Antoni Stec</title>
+    <title>Blog o fotografii i wideo | Porady, kulisy, inspiracje – Antoni Stec</title>
+    <meta name="description" content="Porady dotyczące fotografii motoryzacyjnej, zdjęć nieruchomości i filmowania eventów. Kulisy pracy fotografa i videografa z Lublina." />
+    <link rel="canonical" href="https://antonistec.pl/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://antonistec.pl/blog" />
+    <meta property="og:title" content="Blog o fotografii i wideo – Antoni Stec" />
+    <meta property="og:description" content="Porady, inspiracje i kulisy pracy fotografa. Motoryzacja, nieruchomości, eventy." />
+    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg" />
 </svelte:head>
 
 <section class="blog-page">
