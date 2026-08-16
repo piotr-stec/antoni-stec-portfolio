@@ -198,10 +198,18 @@
             class:smooth={!isDragging}
         >
             {#each slides as slide, i}
-                <div 
-                    class="slide" 
-                    style="--bg-desktop: url('{slide.image}'); --bg-mobile: url('{slide.mobileImage || slide.image}');"
-                >
+                <div class="slide">
+                    <picture class="hero-bg-picture">
+                        <source media="(max-width: 768px)" srcset={slide.mobileImage || slide.image}>
+                        <img 
+                            src={slide.image} 
+                            alt={slide.title} 
+                            class="hero-bg-img"
+                            fetchpriority={i === 0 ? "high" : "auto"}
+                            loading={i === 0 ? "eager" : "lazy"}
+                            decoding={i === 0 ? "sync" : "async"}
+                        >
+                    </picture>
                     <div class="overlay"></div>
                     <!-- Using pointer-events-none on content to prevent text selection during drag -->
                     <div class="container hero-content">
@@ -284,23 +292,25 @@
     }
 
     .slide {
-        min-width: 100%; /* Each slide is 100% of container width */
+        min-width: 100%;
         height: 100%;
-        position: relative;
-        background-image: var(--bg-desktop);
-        background-size: cover;
-        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        user-select: none; /* Prevent selection while dragging */
-        -webkit-user-drag: none;
+        position: relative;
+        overflow: hidden;
+        user-select: none;
     }
 
-    @media (max-width: 768px) {
-        .slide {
-            background-image: var(--bg-mobile);
-        }
+    .hero-bg-picture, .hero-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
     }
 
     .overlay {
