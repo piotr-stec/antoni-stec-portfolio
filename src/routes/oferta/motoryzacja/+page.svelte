@@ -26,6 +26,9 @@
     <meta property="og:description" content="Sesja zdjęciowa samochodu w Lublinie – zdjęcia aut na sprzedaż, rolki motoryzacyjne Instagram i TikTok. Działam w Lublinie i okolicach." />
     <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/m8/02.webp" />
 
+    <!-- Preload hero image for LCP optimization -->
+    <link rel="preload" as="image" href="/portfolio/motoryzacja/m8/02.webp" fetchpriority="high">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
