@@ -14,12 +14,10 @@
     <meta name="description" content="Profesjonalna fotografia i wideo w Lublinie i okolicach. Specjalizacja: motoryzacja, nieruchomości i relacje z eventów. Sprawdź portfolio i ofertę." />
     <meta name="keywords" content="fotograf motoryzacyjny Lublin, filmowanie aut Lublin, zdjęcia nieruchomości Lublin, fotograf nieruchomości, rolki instagram, wideo promocyjne, Antoni Stec, fotograf Lublin" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://antonistec.pl" />
+    <!-- Canonical URL and OG URL are managed per-page -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://antonistec.pl" />
     <meta property="og:title" content="Antoni Stec - Foto & Wideo | Motoryzacja, Nieruchomości, Eventy" />
     <meta property="og:description" content="Tworzę content, który sprzedaje. Zdjęcia i filmy dla motoryzacji i nieruchomości w Lublinie i okolicach." />
     <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
