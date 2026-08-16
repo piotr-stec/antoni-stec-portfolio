@@ -5,30 +5,33 @@
 
     const slides = [
         {
-            image: '/banery_karuzela_hero/motoryzacja_desktop.jpg',
+            image: '/banery_karuzela_hero/motoryzacja_desktop.webp',
+            mobileImage: '/banery_karuzela_hero/motoryzacja_mobilne.webp', 
             title: 'Motoryzacja',
             subtitle: 'Zdjęcia i filmy, które budzą emocje'
         },
         {
             image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2560&auto=format&fit=crop',
+            mobileImage: '/banery_karuzela_hero/nieruchomosci_mobilne.webp',
             title: 'Nieruchomości',
             subtitle: 'Profesjonalna prezentacja nieruchomości'
         },
         {
-            image: '/banery_karuzela_hero/eventy_desktop.jpg',
-            mobileImage: '/banery_karuzela_hero/eventy_mobilne.jpg',
+            image: '/banery_karuzela_hero/eventy_desktop.webp',
+            mobileImage: '/banery_karuzela_hero/eventy_mobilne.webp',
             title: 'Eventy',
             subtitle: 'Chwile warte zapamiętania'
         },
         {
-            image: '/banery_karuzela_hero/produktowe_desktop.jpg',
-            mobileImage: '/banery_karuzela_hero/produktowe_mobilne.jpg',
+            image: '/banery_karuzela_hero/produktowe_desktop.webp',
+            mobileImage: '/banery_karuzela_hero/produktowe_mobilne.webp',
             title: 'Sesje Produktowe',
             subtitle: 'Pokaż swoje produkty w najlepszym świetle'
         }
     ];
 
     let currentIndex = 0;
+    let loadedUpTo = 1; // preload slide 0 + 1 on start
     let track;
     let isDragging = false;
     let startPos = 0;
@@ -40,6 +43,9 @@
     let windowWidth = 0;
     
     $: isMobile = windowWidth <= 768;
+    // When currentIndex changes, extend the loaded range to current + 1 (preload next)
+    $: loadedUpTo = Math.max(loadedUpTo, currentIndex + 1);
+
 
     function startAutoPlay() {
         clearInterval(autoPlayInterval);
@@ -191,8 +197,11 @@
             class:grabbing={isDragging}
             class:smooth={!isDragging}
         >
-            {#each slides as slide}
-                <div class="slide" style="background-image: url('{isMobile && slide.mobileImage ? slide.mobileImage : slide.image}')">
+            {#each slides as slide, i}
+                <div 
+                    class="slide" 
+                    style="--bg-desktop: url('{slide.image}'); --bg-mobile: url('{slide.mobileImage || slide.image}');"
+                >
                     <div class="overlay"></div>
                     <!-- Using pointer-events-none on content to prevent text selection during drag -->
                     <div class="container hero-content">
@@ -278,6 +287,7 @@
         min-width: 100%; /* Each slide is 100% of container width */
         height: 100%;
         position: relative;
+        background-image: var(--bg-desktop);
         background-size: cover;
         background-position: center;
         display: flex;
@@ -285,6 +295,12 @@
         justify-content: center;
         user-select: none; /* Prevent selection while dragging */
         -webkit-user-drag: none;
+    }
+
+    @media (max-width: 768px) {
+        .slide {
+            background-image: var(--bg-mobile);
+        }
     }
 
     .overlay {

@@ -14,7 +14,7 @@
                 { title: "Rolka Instagram/TikTok", range: "150 – 180 zł", details: "Dynamiczny montaż, muzyka, color grading, format pionowy." },
                 { title: "Pakiet Foto + Wideo", range: "350 – 400 zł", details: "Komplet materiałów z jednego spotkania." }
             ],
-            image: "/portfolio/motoryzacja/m8/01.jpg"
+            image: "/portfolio/motoryzacja/m8/01.webp"
         },
         {
             category: "Eventy i Reportaż",
@@ -25,7 +25,7 @@
                 { title: "Rolka eventowa", range: "250 – 300 zł", details: "Skrót wydarzenia, idealny do promocji w social media." },
                 { title: "Reportaż zdjęciowy", range: "120 – 150 zł / h", details: "Selekcja najlepszych ujęć, pełna postprodukcja." }
             ],
-            image: "/portfolio/eventy/01.jpg"
+            image: "/portfolio/eventy/01.webp"
         },
         {
             category: "Nieruchomości",
@@ -35,7 +35,7 @@
             offers: [
                 { title: "Sesja mieszkania / lokalu", range: "150 – 200 zł", details: "Szerokie kadry, HDR, usuwanie niedoskonałości." }
             ],
-            image: "/portfolio/nieruchomosci/01.jpg"
+            image: "/portfolio/nieruchomosci/01.webp"
         },
         {
             category: "Produkty",
@@ -45,7 +45,7 @@
             offers: [
                 { title: "Sesja produktu", range: "150 – 200 zł", details: "Zdjęcia w namiocie bezcieniowym." }
             ],
-            image: "/portfolio/produkty/casualique/bluza001.jpg"
+            image: "/portfolio/produkty/casualique/bluza001.webp"
         }
     ];
 
@@ -130,9 +130,14 @@
             </div>
         </div>
     </div>
+    <div class="section-divider"></div>
 </section>
 
 <style>
+    #oferta {
+        padding-bottom: 0;
+    }
+
     .section-title {
         font-size: 3rem;
         margin-bottom: 1rem;
@@ -346,5 +351,12 @@
             gap: 0.25rem;
             align-items: center; /* Center header content */
         }
+    }
+
+    .section-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent);
+        margin: 4rem auto 0 auto;
     }
 </style>

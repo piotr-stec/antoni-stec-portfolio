@@ -25,7 +25,7 @@
 <style>
     .faq-section {
         background-color: #0a0a0a;
-        padding: 6rem 0;
+        padding: 4rem 0;
         border-top: 1px solid #1a1a1a;
     }
 

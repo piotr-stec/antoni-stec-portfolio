@@ -2,54 +2,140 @@
     import Footer from '$lib/components/Footer.svelte';
     import Contact from '$lib/components/Contact.svelte';
     import InstagramHook from '$lib/components/InstagramHook.svelte';
+    import { fade } from 'svelte/transition';
+
+    let selectedImage = null;
+
+    function openModal(src, alt) {
+        selectedImage = { src, alt };
+    }
+
+    function closeModal() {
+        selectedImage = null;
+    }
 </script>
 
 <svelte:head>
-    <title>Sesja zdjęciowa samochodu Lublin | Zdjęcia aut na sprzedaż i dla pasjonatów</title>
-    <meta name="description" content="Profesjonalna sesja zdjęciowa samochodu w Lublinie. Robię zdjęcia aut na sprzedaż (OLX, Otomoto), dla detailingu oraz pamiątkowe sesje dla pasjonatów." />
+    <title>Sesja zdjęciowa samochodu Lublin | Fotograf samochodowy – Antoni Stec</title>
+    <meta name="description" content="Sesja zdjęciowa samochodu Lublin – zdjęcia aut na sprzedaż (OLX, Otomoto), rolki motoryzacyjne na Instagram i TikTok, sesje dla salonów, komisów i pasjonatów. Działam w Lublinie i okolicach." />
+    <meta name="keywords" content="sesja zdjęciowa samochodu Lublin, fotograf samochodowy Lublin, zdjęcia auta na sprzedaż Lublin, fotografia motoryzacyjna Lublin, fotograf motoryzacyjny Lublin, zdjęcia aut Otomoto Lublin, zdjęcia aut OLX Lublin, rolki motoryzacyjne Instagram Lublin, wideo TikTok motoryzacja Lublin, sesja auto Lublin, fotograf samochód Lublin" />
     <link rel="canonical" href="https://antonistec.pl/oferta/motoryzacja" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://antonistec.pl/oferta/motoryzacja" />
-    <meta property="og:title" content="Sesja zdjęciowa samochodu Lublin | Antoni Stec" />
-    <meta property="og:description" content="Profesjonalna sesja zdjęciowa samochodu w Lublinie. Robię zdjęcia aut na sprzedaż (OLX, Otomoto) i pamiątkowe dla pasjonatów." />
-    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/m8/02.jpg" />
+    <meta property="og:title" content="Sesja zdjęciowa samochodu Lublin | Fotograf samochodowy Antoni Stec" />
+    <meta property="og:description" content="Sesja zdjęciowa samochodu w Lublinie – zdjęcia aut na sprzedaż, rolki motoryzacyjne Instagram i TikTok. Działam w Lublinie i okolicach." />
+    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/m8/02.webp" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Fotografia motoryzacyjna i wideo Lublin",
+      "name": "Sesja zdjęciowa samochodu Lublin – Antoni Stec",
       "provider": {
         "@type": "Person",
         "name": "Antoni Stec",
         "telephone": "+48575554750",
-        "url": "https://antonistec.pl"
+        "email": "antoni.stec82@gmail.com",
+        "url": "https://antonistec.pl",
+        "sameAs": ["https://www.instagram.com/stec.antoni/"]
       },
       "areaServed": {
         "@type": "AdministrativeArea",
         "name": "Lublin i województwo lubelskie"
       },
-      "serviceType": ["Fotografia motoryzacyjna", "Sesja zdjęciowa samochodu", "Rolki motoryzacyjne Instagram", "Wideo motoryzacyjne TikTok"],
+      "serviceType": [
+        "Sesja zdjęciowa samochodu Lublin",
+        "Fotografia motoryzacyjna Lublin",
+        "Fotograf samochodowy Lublin",
+        "Zdjęcia aut na sprzedaż OLX Otomoto",
+        "Rolki motoryzacyjne Instagram",
+        "Wideo motoryzacyjne TikTok",
+        "Sesja zdjęciowa auta dla komisów i salonów",
+        "Fotografia detailingowa Lublin"
+      ],
       "offers": [
         {
           "@type": "Offer",
           "name": "Sesja zdjęciowa auta",
-          "price": "150",
           "priceCurrency": "PLN",
-          "description": "Ok. 15-20 obrobionych zdjęć, wersje web i print."
+          "description": "15–20 obrobionych zdjęć samochodu, wersje web i print. Idealne na OLX i Otomoto."
         },
         {
           "@type": "Offer",
-          "name": "Rolka Instagram/TikTok",
-          "price": "150",
+          "name": "Rolka Instagram/TikTok motoryzacyjna",
           "priceCurrency": "PLN",
-          "description": "Dynamiczny montaż, muzyka, color grading, format pionowy."
+          "description": "Dynamiczny montaż wideo samochodu, muzyka, color grading, format pionowy."
         },
         {
           "@type": "Offer",
-          "name": "Pakiet Foto + Wideo",
-          "price": "350",
+          "name": "Pakiet Foto + Wideo samochodu",
           "priceCurrency": "PLN",
-          "description": "Komplet materiałów z jednego spotkania."
+          "description": "Komplet materiałów z jednego spotkania – zdjęcia i rolka wideo."
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Gdzie realizujesz sesje zdjęciowe samochodów?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Działam przede wszystkim w Lublinie i okolicach (województwo lubelskie)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje sesja zdjęciowa samochodu w Lublinie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sesja zdjęciowa samochodu w Lublinie zaczyna się od 150 zł. Szczegółowa wycena jest bezpłatna – wystarczy napisać lub zadzwonić."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy robisz zdjęcia samochodów na sprzedaż do OLX i Otomoto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak – specjalizuję się w sesjach zdjęciowych samochodów na sprzedaż. Zdjęcia są przygotowane w odpowiednich rozmiarach do OLX, Otomoto i innych portali ogłoszeniowych."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak przygotować auto przed sesją zdjęciową?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auto powinno być umyte i wytarte mikrofibrą, wnętrze posprzątane. Warto zadbać o szczegóły: czarne opony, proste koło kierownicy. Im lepiej przygotowane auto, tym lepsze zdjęcia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile czasu trwa sesja zdjęciowa samochodu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standardowa sesja zdjęciowa samochodu trwa 1–2 godziny. Sesja pakietowa foto + wideo zajmuje 2–3 godziny."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy otrzymam gotowe zdjęcia po sesji?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gotowe materiały dostarczam w ciągu 48–72 godzin od sesji. W pilnych przypadkach możliwa jest szybsza realizacja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy robisz rolki i wideo motoryzacyjne na Instagram i TikTok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak – robię dynamiczne rolki motoryzacyjne na Instagram Reels i TikTok dla salonów samochodowych, komisów, detailingu i pasjonatów motoryzacji w Lublinie."
+          }
         }
       ]
     }
@@ -60,7 +146,7 @@
      HERO – Motoryzacja
      ============================== -->
 <section class="moto-hero">
-    <div class="moto-hero-bg" style="background-image: url('/portfolio/motoryzacja/m8/02.jpg')">
+    <div class="moto-hero-bg" style="background-image: url('/portfolio/motoryzacja/m8/02.webp')">
         <div class="overlay"></div>
     </div>
     <div class="container moto-hero-content">
@@ -165,9 +251,11 @@
         <p class="section-intro">Wybrane sesje zdjęciowe i realizacje wideo – motoryzacja to moja główna specjalność.</p>
 
         <div class="galeria-grid">
-            <div class="galeria-item duzy">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item duzy" on:click={() => openModal('/portfolio/motoryzacja/m8/02.webp', 'Sesja zdjęciowa BMW M8 – fotografia motoryzacyjna Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/m8/02.jpg"
+                    src="/portfolio/motoryzacja/m8/02.webp"
                     alt="Sesja zdjęciowa BMW M8 – fotografia motoryzacyjna Lublin"
                     loading="lazy"
                     decoding="async"
@@ -176,9 +264,11 @@
                 />
                 <div class="galeria-overlay"><span>BMW M8</span></div>
             </div>
-            <div class="galeria-item">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/saab/02.webp', 'Sesja zdjęciowa Saab – fotografia samochodowa Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/saab/02.jpg"
+                    src="/portfolio/motoryzacja/saab/02.webp"
                     alt="Sesja zdjęciowa Saab – fotografia samochodowa Lublin"
                     loading="lazy"
                     decoding="async"
@@ -187,9 +277,11 @@
                 />
                 <div class="galeria-overlay"><span>SAAB</span></div>
             </div>
-            <div class="galeria-item">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/subaru/01.webp', 'Sesja zdjęciowa Subaru na sprzedaż – fotografia motoryzacyjna')}>
                 <img
-                    src="/portfolio/motoryzacja/subaru/01.jpg"
+                    src="/portfolio/motoryzacja/subaru/01.webp"
                     alt="Sesja zdjęciowa Subaru na sprzedaż – fotografia motoryzacyjna"
                     loading="lazy"
                     decoding="async"
@@ -198,10 +290,12 @@
                 />
                 <div class="galeria-overlay"><span>SUBARU</span></div>
             </div>
-            <div class="galeria-item">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/yaris/01.webp', 'Toyota Yaris – sesja motoryzacyjna w Lublinie')}>
                 <img
-                    src="/portfolio/motoryzacja/yaris/01.jpg"
-                    alt="Toyota Yaris – sesja motoryzacyjna dla dealera Lublin"
+                    src="/portfolio/motoryzacja/yaris/01.webp"
+                    alt="Toyota Yaris – sesja motoryzacyjna w Lublinie"
                     loading="lazy"
                     decoding="async"
                     width="400"
@@ -209,9 +303,11 @@
                 />
                 <div class="galeria-overlay"><span>TOYOTA YARIS</span></div>
             </div>
-            <div class="galeria-item">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/jeep/01.webp', 'Sesja zdjęciowa Jeep – fotografia motoryzacyjna w plenerze')}>
                 <img
-                    src="/portfolio/motoryzacja/jeep/01.jpg"
+                    src="/portfolio/motoryzacja/jeep/01.webp"
                     alt="Sesja zdjęciowa Jeep – fotografia motoryzacyjna w plenerze"
                     loading="lazy"
                     decoding="async"
@@ -220,9 +316,11 @@
                 />
                 <div class="galeria-overlay"><span>JEEP</span></div>
             </div>
-            <div class="galeria-item">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/m6/01.webp', 'BMW M6 – profesjonalna fotografia motoryzacyjna Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/m6/01.jpg"
+                    src="/portfolio/motoryzacja/m6/01.webp"
                     alt="BMW M6 – profesjonalna fotografia motoryzacyjna Lublin"
                     loading="lazy"
                     decoding="async"
@@ -320,7 +418,62 @@
 
 <Footer />
 
+{#if selectedImage}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="modal-backdrop" on:click={closeModal} transition:fade={{duration: 200}}>
+        <div class="modal-content" on:click|stopPropagation>
+            <img src={selectedImage.src} alt={selectedImage.alt} in:fade={{duration: 200}} decoding="async" />
+            <button class="close-btn" on:click={closeModal}>&times;</button>
+        </div>
+    </div>
+{/if}
+
 <style>
+    /* ---- MODAL ---- */
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 4px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+
     /* ---- HERO ---- */
     .moto-hero {
         position: relative;

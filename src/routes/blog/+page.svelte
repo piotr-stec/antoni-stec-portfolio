@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://antonistec.pl/blog" />
     <meta property="og:title" content="Blog o fotografii i wideo – Antoni Stec" />
     <meta property="og:description" content="Porady, inspiracje i kulisy pracy fotografa. Motoryzacja, nieruchomości, eventy." />
-    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg" />
+    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
 </svelte:head>
 
 <section class="blog-page">

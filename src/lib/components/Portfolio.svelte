@@ -23,172 +23,172 @@
             id: 1, 
             category: 'auto',
             featured: false,
-            src: '/portfolio/motoryzacja/m6/01.jpg', 
+            src: '/portfolio/motoryzacja/m6/01.webp', 
             alt: 'BMW M6 – sesja zdjęciowa samochodu na sprzedaż, fotografia motoryzacyjna Lublin', 
             title: 'BMW M6',
             gallery: [
-                '/portfolio/motoryzacja/m6/01.jpg',
-                '/portfolio/motoryzacja/m6/02.jpg',
-                '/portfolio/motoryzacja/m6/03.jpg',
-                '/portfolio/motoryzacja/m6/04.jpg',
+                '/portfolio/motoryzacja/m6/01.webp',
+                '/portfolio/motoryzacja/m6/02.webp',
+                '/portfolio/motoryzacja/m6/03.webp',
+                '/portfolio/motoryzacja/m6/04.webp',
             ]
         },
         { 
             id: 2, 
             category: 'auto',
             featured: false,
-            src: '/portfolio/motoryzacja/subaru/01.jpg', 
+            src: '/portfolio/motoryzacja/subaru/01.webp', 
             alt: 'Subaru – profesjonalna fotografia motoryzacyjna, sesja auta na sprzedaż Lublin', 
             title: 'SUBARU',
             gallery: [
-                '/portfolio/motoryzacja/subaru/01.jpg',
-                '/portfolio/motoryzacja/subaru/02.jpg',
-                '/portfolio/motoryzacja/subaru/03.jpg',
-                '/portfolio/motoryzacja/subaru/04.jpg',
-                '/portfolio/motoryzacja/subaru/05.jpg',
-                '/portfolio/motoryzacja/subaru/06.jpg'
+                '/portfolio/motoryzacja/subaru/01.webp',
+                '/portfolio/motoryzacja/subaru/02.webp',
+                '/portfolio/motoryzacja/subaru/03.webp',
+                '/portfolio/motoryzacja/subaru/04.webp',
+                '/portfolio/motoryzacja/subaru/05.webp',
+                '/portfolio/motoryzacja/subaru/06.webp'
             ]
         },
         { 
             id: 3, 
             category: 'auto',
             featured: true,
-            src: '/portfolio/motoryzacja/saab/02.jpg', 
+            src: '/portfolio/motoryzacja/saab/02.webp', 
             alt: 'Saab – sesja zdjęciowa samochodu, fotografia motoryzacyjna w plenerze Lublin', 
             title: 'SAAB',
             gallery: [
-                '/portfolio/motoryzacja/saab/01.jpg',
-                '/portfolio/motoryzacja/saab/02.jpg',
-                '/portfolio/motoryzacja/saab/03.jpg',
-                '/portfolio/motoryzacja/saab/04.jpg',
-                '/portfolio/motoryzacja/saab/05.jpg',
-                '/portfolio/motoryzacja/saab/06.jpg'
+                '/portfolio/motoryzacja/saab/01.webp',
+                '/portfolio/motoryzacja/saab/02.webp',
+                '/portfolio/motoryzacja/saab/03.webp',
+                '/portfolio/motoryzacja/saab/04.webp',
+                '/portfolio/motoryzacja/saab/05.webp',
+                '/portfolio/motoryzacja/saab/06.webp'
             ]
         },
         { 
             id: 4, 
             category: 'auto',
             featured: false,
-            src: '/portfolio/motoryzacja/m850i/01.jpg', 
-            alt: 'BMW M850i – luksusowa fotografia motoryzacyjna, sesja auta dla dealera Lublin', 
+            src: '/portfolio/motoryzacja/m850i/01.webp', 
+            alt: 'BMW M850i – luksusowa fotografia motoryzacyjna, sesja auta w Lublinie', 
             title: 'BMW M850i',
             gallery: [
-                '/portfolio/motoryzacja/m850i/01.jpg',
-                '/portfolio/motoryzacja/m850i/02.jpg'
+                '/portfolio/motoryzacja/m850i/01.webp',
+                '/portfolio/motoryzacja/m850i/02.webp'
             ]
         },
         { 
             id: 5, 
             category: 'auto',
             featured: false,
-            src: '/portfolio/motoryzacja/jeep/01.jpg', 
+            src: '/portfolio/motoryzacja/jeep/01.webp', 
             alt: 'Jeep – terenowa sesja zdjęciowa samochodu, fotografia motoryzacyjna Lublin', 
             title: 'JEEP',
             gallery: [
-                '/portfolio/motoryzacja/jeep/01.jpg',
-                '/portfolio/motoryzacja/jeep/02.jpg',
-                '/portfolio/motoryzacja/jeep/03.jpg',
-                '/portfolio/motoryzacja/jeep/04.jpg'
+                '/portfolio/motoryzacja/jeep/01.webp',
+                '/portfolio/motoryzacja/jeep/02.webp',
+                '/portfolio/motoryzacja/jeep/03.webp',
+                '/portfolio/motoryzacja/jeep/04.webp'
             ]
         },
         { 
             id: 6, 
             category: 'auto',
             featured: true,
-            src: '/portfolio/motoryzacja/m8/02.jpg', 
+            src: '/portfolio/motoryzacja/m8/02.webp', 
             alt: 'BMW M8 – dynamiczna sesja motoryzacyjna dla salonu samochodowego, Lublin', 
             title: 'BMW M8',
             gallery: [
-                '/portfolio/motoryzacja/m8/01.jpg',
-                '/portfolio/motoryzacja/m8/02.jpg',
-                '/portfolio/motoryzacja/m8/03.jpg',
-                '/portfolio/motoryzacja/m8/04.jpg',
+                '/portfolio/motoryzacja/m8/01.webp',
+                '/portfolio/motoryzacja/m8/02.webp',
+                '/portfolio/motoryzacja/m8/03.webp',
+                '/portfolio/motoryzacja/m8/04.webp',
             ]
         },
         { 
             id: 7, 
             category: 'auto',
             featured: true,
-            src: '/portfolio/motoryzacja/yaris/01.jpg', 
+            src: '/portfolio/motoryzacja/yaris/01.webp', 
             alt: 'Toyota Yaris – sesja sprzedażowa samochodu, zdjęcia aut na sprzedaż Lublin', 
             title: 'TOYOTA YARIS',
             gallery: [
-                '/portfolio/motoryzacja/yaris/01.jpg',
-                '/portfolio/motoryzacja/yaris/02.jpg',
-                '/portfolio/motoryzacja/yaris/03.jpg'
+                '/portfolio/motoryzacja/yaris/01.webp',
+                '/portfolio/motoryzacja/yaris/02.webp',
+                '/portfolio/motoryzacja/yaris/03.webp'
             ]
         },
         { 
             id: 8, 
             category: 'event',
             featured: false,
-            src: '/portfolio/eventy/01.jpg', 
+            src: '/portfolio/eventy/01.webp', 
             alt: 'Reportaż z eventu – fotografia imprezowa i relacja ze zlotu, Lublin', 
             title: 'EVENTY',
-            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg']
+            gallery: ['/portfolio/eventy/01.webp', '/portfolio/eventy/02.webp']
         },
         { 
             id: 9, 
             category: 'interior',
             featured: false,
-            src: '/portfolio/nieruchomosci/01.jpg', 
+            src: '/portfolio/nieruchomosci/01.webp', 
             alt: 'Zdjęcia wnętrz nieruchomości na sprzedaż – profesjonalna fotografia mieszkań Lublin', 
             title: 'WNĘTRZA',
-            gallery: ['/portfolio/nieruchomosci/01.jpg']
+            gallery: ['/portfolio/nieruchomosci/01.webp']
         },
         { 
             id: 10, 
             category: 'products',
             featured: true,
-            src: '/portfolio/produkty/casualique/bluza001.jpg', 
+            src: '/portfolio/produkty/casualique/bluza001.webp', 
             alt: 'Sesja produktowa bluzy – zdjęcia odzieży na białym tle do sklepu internetowego', 
             title: 'SESJE PRODUKTOWE',
-            gallery: [ '/portfolio/produkty/casualique/bluza01.jpg', '/portfolio/produkty/casualique/bluza02.jpg', '/portfolio/produkty/casualique/bluza03.jpg' ]
+            gallery: [ '/portfolio/produkty/casualique/bluza01.webp', '/portfolio/produkty/casualique/bluza02.webp', '/portfolio/produkty/casualique/bluza03.webp' ]
         },
         { 
             id: 11, 
             category: 'products',
             featured: true,
-            src: '/portfolio/produkty/casualique/green01.jpg', 
+            src: '/portfolio/produkty/casualique/green01.webp', 
             alt: 'Sesja produktowa zielonej odzieży – fotografia produktów e-commerce', 
             title: 'SESJE PRODUKTOWE',
-            gallery: [ '/portfolio/produkty/casualique/green01.jpg', '/portfolio/produkty/casualique/green02.jpg','/portfolio/produkty/casualique/green03.jpg', '/portfolio/produkty/casualique/green04.jpg', '/portfolio/produkty/casualique/green05.jpg' ]
+            gallery: [ '/portfolio/produkty/casualique/green01.webp', '/portfolio/produkty/casualique/green02.webp','/portfolio/produkty/casualique/green03.webp', '/portfolio/produkty/casualique/green04.webp', '/portfolio/produkty/casualique/green05.webp' ]
         },
         { 
             id: 12, 
             category: 'products',
             featured: true,
-            src: '/portfolio/produkty/casualique/red02.jpg', 
+            src: '/portfolio/produkty/casualique/red02.webp', 
             alt: 'Sesja produktowa czerwonej kolekcji – profesjonalne zdjęcia produktów do sklepu online', 
             title: 'SESJE PRODUKTOWE',
-            gallery: [ '/portfolio/produkty/casualique/red01.jpg', '/portfolio/produkty/casualique/red02.jpg', '/portfolio/produkty/casualique/red03.jpg','/portfolio/produkty/casualique/red04.jpg', '/portfolio/produkty/casualique/red05.jpg'  ]
+            gallery: [ '/portfolio/produkty/casualique/red01.webp', '/portfolio/produkty/casualique/red02.webp', '/portfolio/produkty/casualique/red03.webp','/portfolio/produkty/casualique/red04.webp', '/portfolio/produkty/casualique/red05.webp'  ]
         },
         { 
             id: 13, 
             category: 'event',
             featured: true,
-            src: '/portfolio/eventy/01.jpg', 
+            src: '/portfolio/eventy/01.webp', 
             alt: 'Relacja fotograficzna z eventu – fotografia imprez i wydarzeń kulturalnych Lublin', 
             title: 'EVENTY',
-            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+            gallery: ['/portfolio/eventy/01.webp', '/portfolio/eventy/02.webp', '/portfolio/eventy/03.webp', '/portfolio/eventy/04.webp', '/portfolio/eventy/05.webp', '/portfolio/eventy/06.webp', '/portfolio/eventy/07.webp' , '/portfolio/eventy/08.webp', '/portfolio/eventy/09.webp', '/portfolio/eventy/10.webp' ]
         },
         { 
             id: 14, 
             category: 'event',
             featured: true,
-            src: '/portfolio/eventy/02.jpg', 
+            src: '/portfolio/eventy/02.webp', 
             alt: 'Fotoreportaż z imprezy firmowej – relacja wideo i zdjęciowa Lublin', 
             title: 'EVENTY',
-            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+            gallery: ['/portfolio/eventy/01.webp', '/portfolio/eventy/02.webp', '/portfolio/eventy/03.webp', '/portfolio/eventy/04.webp', '/portfolio/eventy/05.webp', '/portfolio/eventy/06.webp', '/portfolio/eventy/07.webp' , '/portfolio/eventy/08.webp', '/portfolio/eventy/09.webp', '/portfolio/eventy/10.webp' ]
         },
         { 
             id: 15, 
             category: 'event',
             featured: true,
-            src: '/portfolio/eventy/03.jpg', 
+            src: '/portfolio/eventy/03.webp', 
             alt: 'Zdjęcia z eventu – reportaż ze zlotu i imprezy, fotografia eventowa Lublin', 
             title: 'EVENTY',
-            gallery: ['/portfolio/eventy/01.jpg', '/portfolio/eventy/02.jpg', '/portfolio/eventy/03.jpg', '/portfolio/eventy/04.jpg', '/portfolio/eventy/05.jpg', '/portfolio/eventy/06.jpg', '/portfolio/eventy/07.jpg' , '/portfolio/eventy/08.jpg', '/portfolio/eventy/09.jpg', '/portfolio/eventy/10.jpg' ]
+            gallery: ['/portfolio/eventy/01.webp', '/portfolio/eventy/02.webp', '/portfolio/eventy/03.webp', '/portfolio/eventy/04.webp', '/portfolio/eventy/05.webp', '/portfolio/eventy/06.webp', '/portfolio/eventy/07.webp' , '/portfolio/eventy/08.webp', '/portfolio/eventy/09.webp', '/portfolio/eventy/10.webp' ]
         },
         
     ];

@@ -4,7 +4,7 @@ export const posts = [
         title: 'Dlaczego warto inwestować w rolki na Instagramie?',
         excerpt: 'Krótkie formy wideo to obecnie najskuteczniejszy sposób na zasięgi. Zobacz, jak profesjonalna rolka może zmienić odbiór Twojej marki.',
         date: '2024-03-15',
-        coverImage: '/portfolio/eventy/01.jpg',
+        coverImage: '/portfolio/eventy/01.webp',
         content: `
             <p>W dzisiejszych czasach uwaga odbiorcy jest na wagę złota. Statystyki pokazują, że formaty wideo, a w szczególności Reels (Rolki) na Instagramie oraz TikToki, generują znacznie wyższe zaangażowanie niż tradycyjne zdjęcia.</p>
             
@@ -23,7 +23,7 @@ export const posts = [
         title: 'Jak przygotować auto do sesji zdjęciowej?',
         excerpt: 'Czystość to podstawa, ale detale robią różnicę. Poradnik dla właścicieli aut i dealerów przed przyjazdem fotografa.',
         date: '2024-02-28',
-        coverImage: '/portfolio/motoryzacja/jeep/01.jpg',
+        coverImage: '/portfolio/motoryzacja/jeep/01.webp',
         content: `
             <p>Nawet najlepszy fotograf i najdroższy sprzęt nie ukryją brudu na karoserii (choć Photoshop potrafi cuda, to zajmuje to mnóstwo czasu i kosztuje). Aby sesja przebiegła sprawnie, a efekty były powalające, warto zadbać o kilka kwestii.</p>
 

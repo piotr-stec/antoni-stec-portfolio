@@ -13,7 +13,7 @@
     <meta property="og:url" content={`https://antonistec.pl/blog/${post ? post.slug : ''}`} />
     <meta property="og:title" content={post ? post.title : 'Artykuł – Antoni Stec'} />
     <meta property="og:description" content={post ? post.excerpt : ''} />
-    <meta property="og:image" content={post ? post.coverImage : 'https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg'} />
+    <meta property="og:image" content={post ? post.coverImage : 'https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp'} />
     <meta property="article:published_time" content={post ? post.date : ''} />
     <meta property="article:author" content="Antoni Stec" />
 </svelte:head>

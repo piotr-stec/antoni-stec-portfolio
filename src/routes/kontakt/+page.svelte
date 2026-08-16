@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://antonistec.pl/kontakt" />
     <meta property="og:title" content="Kontakt i Wycena – Fotograf Lublin | Antoni Stec" />
     <meta property="og:description" content="Zapytaj o wycenę sesji motoryzacyjnej, zdjęć nieruchomości lub filmowania eventów w Lublinie. Odpowiadam szybko." />
-    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.jpg" />
+    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
