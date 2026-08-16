@@ -1,5 +1,7 @@
 import { getAllPosts } from '$lib/server/posts.js';
 
+export const prerender = true;
+
 const SITE_URL = 'https://antonistec.pl';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
