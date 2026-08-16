@@ -77,6 +77,13 @@
                 },
                 onChange: function(selectedDates, dateStr) {
                     formData.date = dateStr;
+                },
+                onReady: function(selectedDates, dateStr, instance) {
+                    // Fix Google PageSpeed / Lighthouse accessibility error 
+                    // "Elements should not have tabindex greater than zero"
+                    if (instance.mobileInput) {
+                        instance.mobileInput.removeAttribute('tabindex');
+                    }
                 }
             });
         }

@@ -15,7 +15,7 @@
                 <article class="post-card">
                     <a href="/blog/{post.slug}" class="img-link">
                         <img 
-                            src={post.coverImage} 
+                            src={post.coverImage.replace('.webp', '_thumb.webp')} 
                             alt={post.title} 
                             loading="lazy"
                             decoding="async"

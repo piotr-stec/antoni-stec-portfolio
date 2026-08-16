@@ -94,7 +94,7 @@
                             </div>
                             <div class="image-wrapper">
                                 <img 
-                                    src={services[activeService].image} 
+                                    src={services[activeService].image.replace('.webp', '_thumb.webp')} 
                                     alt={services[activeService].category}
                                     loading="lazy"
                                     decoding="async"

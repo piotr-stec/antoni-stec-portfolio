@@ -22,7 +22,10 @@ const config = {
 				'img-src': ['self', 'data:', 'https:'],
 				'connect-src': ['self']
 			}
-		}
+		},
+		
+		// Inline all CSS to avoid render-blocking CSS requests
+		inlineStyleThreshold: Infinity
 	},
 	
 	// Compiler optimizations

@@ -273,7 +273,7 @@
                     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
                     <div class="image-wrapper" on:click={() => openModal(item)}>
                         <img 
-                            src={item.src} 
+                            src={item.src.replace('.webp', '_thumb.webp')} 
                             alt={item.alt} 
                             loading="lazy"
                             decoding="async"

@@ -258,7 +258,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item duzy" on:click={() => openModal('/portfolio/motoryzacja/m8/02.webp', 'Sesja zdjęciowa BMW M8 – fotografia motoryzacyjna Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/m8/02.webp"
+                    src="/portfolio/motoryzacja/m8/02_thumb.webp"
                     alt="Sesja zdjęciowa BMW M8 – fotografia motoryzacyjna Lublin"
                     loading="lazy"
                     decoding="async"
@@ -271,7 +271,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/saab/02.webp', 'Sesja zdjęciowa Saab – fotografia samochodowa Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/saab/02.webp"
+                    src="/portfolio/motoryzacja/saab/02_thumb.webp"
                     alt="Sesja zdjęciowa Saab – fotografia samochodowa Lublin"
                     loading="lazy"
                     decoding="async"
@@ -284,7 +284,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/subaru/01.webp', 'Sesja zdjęciowa Subaru na sprzedaż – fotografia motoryzacyjna')}>
                 <img
-                    src="/portfolio/motoryzacja/subaru/01.webp"
+                    src="/portfolio/motoryzacja/subaru/01_thumb.webp"
                     alt="Sesja zdjęciowa Subaru na sprzedaż – fotografia motoryzacyjna"
                     loading="lazy"
                     decoding="async"
@@ -297,7 +297,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/yaris/01.webp', 'Toyota Yaris – sesja motoryzacyjna w Lublinie')}>
                 <img
-                    src="/portfolio/motoryzacja/yaris/01.webp"
+                    src="/portfolio/motoryzacja/yaris/01_thumb.webp"
                     alt="Toyota Yaris – sesja motoryzacyjna w Lublinie"
                     loading="lazy"
                     decoding="async"
@@ -310,7 +310,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/jeep/01.webp', 'Sesja zdjęciowa Jeep – fotografia motoryzacyjna w plenerze')}>
                 <img
-                    src="/portfolio/motoryzacja/jeep/01.webp"
+                    src="/portfolio/motoryzacja/jeep/01_thumb.webp"
                     alt="Sesja zdjęciowa Jeep – fotografia motoryzacyjna w plenerze"
                     loading="lazy"
                     decoding="async"
@@ -323,7 +323,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div class="galeria-item" on:click={() => openModal('/portfolio/motoryzacja/m6/01.webp', 'BMW M6 – profesjonalna fotografia motoryzacyjna Lublin')}>
                 <img
-                    src="/portfolio/motoryzacja/m6/01.webp"
+                    src="/portfolio/motoryzacja/m6/01_thumb.webp"
                     alt="BMW M6 – profesjonalna fotografia motoryzacyjna Lublin"
                     loading="lazy"
                     decoding="async"
