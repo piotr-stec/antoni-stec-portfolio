@@ -1,9 +1,10 @@
-import { posts } from '$lib/data/posts.js';
+import { getAllPosts } from '$lib/server/posts.js';
 
 const SITE_URL = 'https://antonistec.pl';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function GET() {
+	const posts = getAllPosts();
 	const staticPages = [
 		{
 			url: '',

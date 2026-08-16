@@ -1,5 +1,6 @@
 <script>
-    import { posts } from '$lib/data/posts.js';
+    export let data;
+    $: posts = data.posts;
 </script>
 
 <svelte:head>

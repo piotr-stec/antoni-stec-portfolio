@@ -1,8 +1,6 @@
 <script>
-    import { posts } from '$lib/data/posts.js';
-    
-    // Take only first 3 posts
-    const recentPosts = posts.slice(0, 3);
+    export let posts = [];
+    $: recentPosts = posts.slice(0, 3);
 </script>
 
 <section id="blog-preview">

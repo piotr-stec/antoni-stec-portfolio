@@ -1,8 +1,6 @@
 <script>
-    import { page } from '$app/stores';
-    import { posts } from '$lib/data/posts.js';
-
-    $: post = posts.find(p => p.slug === $page.params.slug);
+    export let data;
+    $: post = data.post;
 </script>
 
 <svelte:head>

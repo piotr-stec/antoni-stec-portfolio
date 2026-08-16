@@ -11,6 +11,8 @@
     import FAQ from '$lib/components/FAQ.svelte';
     import InstagramHook from '$lib/components/InstagramHook.svelte';
 
+    export let data;
+
     function scrollToQuote() {
         const el = document.getElementById('kontakt');
         if (el) {
@@ -43,7 +45,7 @@
 <Backstage />
 <Process />
 <FAQ />
-<BlogTeaser />
+<BlogTeaser posts={data.recentPosts} />
 <Contact id="kontakt" />
 <Footer />
 

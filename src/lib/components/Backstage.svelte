@@ -58,7 +58,7 @@
             muted 
             playsinline
             preload="auto"
-            poster="/M4-5534.webp"
+            poster="/portfolio/motoryzacja/m6/02.webp"
         >
             <source src={isMobile ? "/backstage_video/mobilna.mp4" : "/backstage_video/desktop.mp4"} type="video/mp4">
         </video>
