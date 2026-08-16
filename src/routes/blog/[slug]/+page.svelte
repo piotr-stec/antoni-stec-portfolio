@@ -6,12 +6,12 @@
 <svelte:head>
     <title>{post ? `${post.title} – Antoni Stec` : 'Artykuł – Antoni Stec'}</title>
     <meta name="description" content={post ? post.excerpt : 'Artykuł na blogu Antoniego Steca – fotografia i wideo.'} />
-    <link rel="canonical" href={`https://www.antonistec.pl/blog/${post ? post.slug : ''}`} />
+    <link rel="canonical" href={`https://antonistec.pl/blog/${post ? post.slug : ''}`} />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content={`https://www.antonistec.pl/blog/${post ? post.slug : ''}`} />
+    <meta property="og:url" content={`https://antonistec.pl/blog/${post ? post.slug : ''}`} />
     <meta property="og:title" content={post ? post.title : 'Artykuł – Antoni Stec'} />
     <meta property="og:description" content={post ? post.excerpt : ''} />
-    <meta property="og:image" content={post ? post.coverImage : 'https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp'} />
+    <meta property="og:image" content={post ? post.coverImage : 'https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp'} />
     <meta property="article:published_time" content={post ? post.date : ''} />
     <meta property="article:author" content="Antoni Stec" />
 </svelte:head>

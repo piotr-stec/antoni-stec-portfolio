@@ -15,21 +15,21 @@
     <meta name="keywords" content="fotograf motoryzacyjny Lublin, filmowanie aut Lublin, zdjęcia nieruchomości Lublin, fotograf nieruchomości, rolki instagram, wideo promocyjne, Antoni Stec, fotograf Lublin" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.antonistec.pl" />
+    <link rel="canonical" href="https://antonistec.pl" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.antonistec.pl" />
+    <meta property="og:url" content="https://antonistec.pl" />
     <meta property="og:title" content="Antoni Stec - Foto & Wideo | Motoryzacja, Nieruchomości, Eventy" />
     <meta property="og:description" content="Tworzę content, który sprzedaje. Zdjęcia i filmy dla motoryzacji i nieruchomości w Lublinie i okolicach." />
-    <meta property="og:image" content="https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
+    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
     <meta property="og:locale" content="pl_PL" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Antoni Stec - Foto & Wideo" />
     <meta name="twitter:description" content="Profesjonalna fotografia i wideo w Lublinie. Motoryzacja, nieruchomości, eventy." />
-    <meta name="twitter:image" content="https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
+    <meta name="twitter:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
     
     <!-- Additional SEO -->
     <meta name="author" content="Antoni Stec" />
@@ -43,9 +43,9 @@
       "@type": "ProfessionalService",
       "name": "Antoni Stec - Foto & Wideo",
       "description": "Profesjonalna fotografia i wideo w Lublinie. Specjalizacja: motoryzacja, nieruchomości, eventy.",
-      "url": "https://www.antonistec.pl",
-      "logo": "https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp",
-      "image": "https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp",
+      "url": "https://antonistec.pl",
+      "logo": "https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp",
+      "image": "https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp",
       "priceRange": "150-400 PLN",
       "address": {
         "@type": "PostalAddress",
