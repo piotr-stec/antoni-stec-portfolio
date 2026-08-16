@@ -21,6 +21,7 @@
       "provider": {
         "@type": "Person",
         "name": "Antoni Stec",
+        "telephone": "+48575554750",
         "url": "https://antonistec.pl"
       },
       "areaServed": {
@@ -277,7 +278,7 @@
         <div class="faq-lista">
             <details class="faq-item">
                 <summary>Gdzie realizujesz sesje motoryzacyjne?</summary>
-                <p>Działam przede wszystkim w <strong>Lublinie</strong> i&nbsp;okolicach – Świdnik, Zamość, Puławy, Chełm, Łęczna. Dojazd do 50 km jest wliczony w cenę. W przypadku dalszych lokalizacji doliczam ryczałt za dojazd.</p>
+                <p>Działam przede wszystkim w <strong>Lublinie</strong> i&nbsp;okolicach.</p>
             </details>
             <details class="faq-item">
                 <summary>Jak przygotować auto przed sesją?</summary>

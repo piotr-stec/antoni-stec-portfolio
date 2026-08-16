@@ -139,6 +139,10 @@
                     <p>antoni.stec82@gmail.com</p>
                 </div>
                 <div class="info-item">
+                    <strong>Telefon</strong>
+                    <p><a href="tel:+48575554750" style="color: #ccc; text-decoration: none;">+48 575 554 750</a></p>
+                </div>
+                <div class="info-item">
                     <strong>Instagram</strong>
                     <p><a href="https://www.instagram.com/stec.antoni/" target="_blank" rel="noopener noreferrer" style="color: #ccc; text-decoration: none;">@stec.antoni</a></p>
                 </div>

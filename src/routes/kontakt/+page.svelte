@@ -23,6 +23,7 @@
         "@type": "Person",
         "name": "Antoni Stec",
         "jobTitle": "Fotograf i Videograf",
+        "telephone": "+48575554750",
         "email": "mailto:antoni.stec82@gmail.com",
         "url": "https://antonistec.pl",
         "address": {
@@ -40,7 +41,7 @@
 <div class="kontakt-page">
     <div class="page-header container">
         <h1>Kontakt i wycena</h1>
-        <p class="page-intro">Działam w Lublinie i całym województwie lubelskim. Opisz projekt – odezwę się w ciągu 24&nbsp;h z&nbsp;wyceną.</p>
+        <p class="page-intro">Działam w Lublinie i okolicach. Opisz projekt – odezwę się w ciągu 24&nbsp;h z&nbsp;wyceną.</p>
     </div>
 
     <Contact id="kontakt-form" />
@@ -60,6 +61,10 @@
                 <div class="kontakt-dane">
                     <h3>Dane kontaktowe</h3>
                     <address>
+                        <div class="kontakt-item">
+                            <span class="kontakt-label">Telefon</span>
+                            <a href="tel:+48575554750">+48 575 554 750</a>
+                        </div>
                         <div class="kontakt-item">
                             <span class="kontakt-label">Email</span>
                             <a href="mailto:antoni.stec82@gmail.com">antoni.stec82@gmail.com</a>

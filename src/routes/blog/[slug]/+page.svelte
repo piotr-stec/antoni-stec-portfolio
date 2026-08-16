@@ -38,7 +38,7 @@
             <div class="cta-box">
                 <h3>Potrzebujesz podobnych materiałów?</h3>
                 <p>Napisz do mnie i stwórzmy coś razem.</p>
-                <a href="/#contact" class="btn btn-primary">Zapytaj o wycenę</a>
+                <a href="/kontakt" class="btn btn-primary">Zapytaj o wycenę</a>
             </div>
         </article>
     {:else}

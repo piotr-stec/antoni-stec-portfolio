@@ -5,6 +5,7 @@
             <p>Foto & Wideo</p>
         </div>
         <div class="socials">
+            <a href="tel:+48575554750">Telefon</a>
             <a href="https://www.instagram.com/stec.antoni/" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="mailto:antoni.stec82@gmail.com">Email</a>
         </div>
