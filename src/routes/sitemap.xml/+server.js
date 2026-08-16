@@ -42,7 +42,7 @@ export async function GET() {
 
 	const blogPages = posts.map((post) => ({
 		url: `/blog/${post.slug}`,
-		lastmod: post.date,
+		lastmod: new Date(post.rawDate).toISOString().split('T')[0],
 		changefreq: 'yearly',
 		priority: '0.6'
 	}));
