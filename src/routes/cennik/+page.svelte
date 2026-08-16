@@ -5,9 +5,9 @@
 <svelte:head>
     <title>Cennik usług fotograficznych i wideo | Antoni Stec Lublin</title>
     <meta name="description" content="Sprawdź cennik sesji zdjęciowych i realizacji wideo w Lublinie. Fotografia motoryzacyjna, nieruchomości, eventy i produkty. Transparentne ceny od 150 zł." />
-    <link rel="canonical" href="https://antonistec.pl/cennik" />
+    <link rel="canonical" href="https://www.antonistec.pl/cennik" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://antonistec.pl/cennik" />
+    <meta property="og:url" content="https://www.antonistec.pl/cennik" />
     <meta property="og:title" content="Cennik usług fotograficznych i wideo | Antoni Stec" />
     <meta property="og:description" content="Transparentny cennik sesji motoryzacyjnych, wnętrz i eventów. Lublin i bliskie okolice." />
 </svelte:head>

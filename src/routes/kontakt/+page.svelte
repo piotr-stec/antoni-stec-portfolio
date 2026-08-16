@@ -6,18 +6,18 @@
 <svelte:head>
     <title>Kontakt i Wycena – Fotograf Lublin | Antoni Stec</title>
     <meta name="description" content="Skontaktuj się z fotografem i videografem z Lublina. Bezpłatna wycena sesji motoryzacyjnej, zdjęć nieruchomości i filmowania eventów. Odpowiem w ciągu 24h." />
-    <link rel="canonical" href="https://antonistec.pl/kontakt" />
+    <link rel="canonical" href="https://www.antonistec.pl/kontakt" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://antonistec.pl/kontakt" />
+    <meta property="og:url" content="https://www.antonistec.pl/kontakt" />
     <meta property="og:title" content="Kontakt i Wycena – Fotograf Lublin | Antoni Stec" />
     <meta property="og:description" content="Zapytaj o wycenę sesji motoryzacyjnej, zdjęć nieruchomości lub filmowania eventów w Lublinie. Odpowiadam szybko." />
-    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
+    <meta property="og:image" content="https://www.antonistec.pl/portfolio/motoryzacja/subaru/01.webp" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Kontakt – Antoni Stec Foto & Wideo",
-      "url": "https://antonistec.pl/kontakt",
+      "url": "https://www.antonistec.pl/kontakt",
       "description": "Skontaktuj się z fotografem i videografem z Lublina – Antoni Stec.",
       "mainEntity": {
         "@type": "Person",
@@ -25,7 +25,7 @@
         "jobTitle": "Fotograf i Videograf",
         "telephone": "+48575554750",
         "email": "mailto:antoni.stec82@gmail.com",
-        "url": "https://antonistec.pl",
+        "url": "https://www.antonistec.pl",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Lublin",

@@ -19,12 +19,12 @@
     <title>Sesja zdjęciowa samochodu Lublin | Fotograf samochodowy – Antoni Stec</title>
     <meta name="description" content="Sesja zdjęciowa samochodu Lublin – zdjęcia aut na sprzedaż (OLX, Otomoto), rolki motoryzacyjne na Instagram i TikTok, sesje dla salonów, komisów i pasjonatów. Działam w Lublinie i okolicach." />
     <meta name="keywords" content="sesja zdjęciowa samochodu Lublin, fotograf samochodowy Lublin, zdjęcia auta na sprzedaż Lublin, fotografia motoryzacyjna Lublin, fotograf motoryzacyjny Lublin, zdjęcia aut Otomoto Lublin, zdjęcia aut OLX Lublin, rolki motoryzacyjne Instagram Lublin, wideo TikTok motoryzacja Lublin, sesja auto Lublin, fotograf samochód Lublin" />
-    <link rel="canonical" href="https://antonistec.pl/oferta/motoryzacja" />
+    <link rel="canonical" href="https://www.antonistec.pl/oferta/motoryzacja" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://antonistec.pl/oferta/motoryzacja" />
+    <meta property="og:url" content="https://www.antonistec.pl/oferta/motoryzacja" />
     <meta property="og:title" content="Sesja zdjęciowa samochodu Lublin | Fotograf samochodowy Antoni Stec" />
     <meta property="og:description" content="Sesja zdjęciowa samochodu w Lublinie – zdjęcia aut na sprzedaż, rolki motoryzacyjne Instagram i TikTok. Działam w Lublinie i okolicach." />
-    <meta property="og:image" content="https://antonistec.pl/portfolio/motoryzacja/m8/02.webp" />
+    <meta property="og:image" content="https://www.antonistec.pl/portfolio/motoryzacja/m8/02.webp" />
 
     <!-- Preload hero image for LCP optimization -->
     <link rel="preload" as="image" href="/portfolio/motoryzacja/m8/02.webp" fetchpriority="high">
@@ -39,7 +39,7 @@
         "name": "Antoni Stec",
         "telephone": "+48575554750",
         "email": "antoni.stec82@gmail.com",
-        "url": "https://antonistec.pl",
+        "url": "https://www.antonistec.pl",
         "sameAs": ["https://www.instagram.com/stec.antoni/"]
       },
       "areaServed": {
