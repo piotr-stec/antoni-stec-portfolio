@@ -29,7 +29,7 @@
                             <h3>Sesja zdjęciowa auta</h3>
                             <span class="cena">150 – 250 zł</span>
                         </div>
-                        <p>15–20 obrobionych zdjęć, wersje web i print. Idealne na OLX, Otomoto i social media.</p>
+                        <p>15–20 obrobionych zdjęć. Idealne na OLX, Otomoto i social media.</p>
                     </div>
                     <div class="cennik-item">
                         <div class="cennik-header">
@@ -57,7 +57,7 @@
                             <h3>Sesja mieszkania / domu</h3>
                             <span class="cena">150 – 200 zł</span>
                         </div>
-                        <p>Szerokie kadry, technika HDR. Zdjęcia jasne, przestronne i gotowe do publikacji na portalach ogłoszeniowych.</p>
+                        <p>Szerokie kadry, technika HDR. Jasne przestronne zdjęcia do publikacji na portalach ogłoszeniowych.</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                             <h3>Sesja produktu</h3>
                             <span class="cena">150 – 200 zł</span>
                         </div>
-                        <p>Szczegółowe zdjęcia produktów na białym tle lub w aranżacji. Wycena zależy od liczby produktów i stopnia skomplikowania retuszu.</p>
+                        <p>Szczegółowe zdjęcia produktów na białym tle. Wycena zależy od liczby produktów i stopnia skomplikowania retuszu.</p>
                     </div>
                 </div>
             </div>

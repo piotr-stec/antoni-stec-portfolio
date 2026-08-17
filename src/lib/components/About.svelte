@@ -26,10 +26,6 @@
                     <span class="stat-label">Zaangażowania w każdy detal</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">4K</span>
-                    <span class="stat-label">Jakość realizowanych nagrań</span>
-                </div>
-                <div class="stat-item">
                     <span class="stat-value">24h</span>
                     <span class="stat-label">Sprawny kontakt i wycena</span>
                 </div>

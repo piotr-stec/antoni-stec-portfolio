@@ -10,8 +10,8 @@
             portfolioFilter: "auto",
             description: "Profesjonalna fotografia motoryzacyjna w Lublinie. Realizuję sesje sprzedażowe samochodów (OLX, Otomoto), pakiety foto+wideo dla salonów oraz dynamiczne rolki (TikTok/IG) dla detailerów i komisów.",
             offers: [
-                { title: "Sesja zdjęciowa auta", range: "150 – 250 zł", details: "Ok. 15-20 obrobionych zdjęć, wersje web i print." },
-                { title: "Rolka Instagram/TikTok", range: "150 – 180 zł", details: "Dynamiczny montaż, muzyka, color grading, format pionowy." },
+                { title: "Sesja zdjęciowa auta", range: "150 – 250 zł", details: "Ok. 15-20 obrobionych zdjęć." },
+                { title: "Rolka Instagram/TikTok", range: "150 – 180 zł", details: "Dynamiczny montaż, muzyka, color grading." },
                 { title: "Pakiet Foto + Wideo", range: "350 – 400 zł", details: "Komplet materiałów z jednego spotkania." }
             ],
             image: "/portfolio/motoryzacja/m8/01.webp"
@@ -116,14 +116,19 @@
                             {/each}
                         </div>
                         
-                        <div class="note" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <div class="note service-cta" style="margin-top: 1rem;">
                             {#if services[activeService].slug === 'motoryzacja'}
-                                <a href="/oferta/motoryzacja" class="btn btn-primary" style="background-color: #fff; color: #000;">Sprawdź pełną ofertę motoryzacyjną</a>
-                                <a href="/cennik" class="btn btn-outline">Zobacz cennik</a>
+                                <a href="/oferta/motoryzacja" class="btn btn-primary cta-main" style="background-color: #fff; color: #000;">Sprawdź pełną ofertę motoryzacyjną</a>
+                                <div class="cta-sub-row">
+                                    <a href="/cennik" class="btn btn-outline">Zobacz cennik</a>
+                                    <a href="/?filter={services[activeService].portfolioFilter}#portfolio" class="btn btn-outline">Zobacz portfolio</a>
+                                </div>
                             {:else}
-                                <a href="/cennik" class="btn btn-primary">Zobacz pełny cennik</a>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <a href="/cennik" class="btn btn-primary">Zobacz pełny cennik</a>
+                                    <a href="/?filter={services[activeService].portfolioFilter}#portfolio" class="btn btn-outline">Zobacz portfolio</a>
+                                </div>
                             {/if}
-                            <a href="/?filter={services[activeService].portfolioFilter}#portfolio" class="btn btn-outline">Zobacz portfolio</a>
                         </div>
                     </div>
                 {/key}
@@ -358,5 +363,33 @@
         height: 1px;
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent);
         margin: 4rem auto 0 auto;
+    }
+
+    .service-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    .service-cta :global(.btn) {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .cta-main {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta-sub-row {
+        display: flex;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .cta-sub-row .btn {
+        flex: 1;
+        text-align: center;
     }
 </style>

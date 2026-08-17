@@ -357,6 +357,18 @@
         text-transform: uppercase;
     }
 
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 4vw;
+            letter-spacing: 0;
+        }
+
+        :global(.hero .container.hero-content) {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+    }
+
     .subtitle {
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -433,7 +445,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             margin-bottom: 1.5rem;
         }
 

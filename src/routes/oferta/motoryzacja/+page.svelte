@@ -61,13 +61,13 @@
           "@type": "Offer",
           "name": "Sesja zdjęciowa auta",
           "priceCurrency": "PLN",
-          "description": "15–20 obrobionych zdjęć samochodu, wersje web i print. Idealne na OLX i Otomoto."
+          "description": "15–20 obrobionych zdjęć samochodu. Idealne na OLX i Otomoto."
         },
         {
           "@type": "Offer",
           "name": "Rolka Instagram/TikTok motoryzacyjna",
           "priceCurrency": "PLN",
-          "description": "Dynamiczny montaż wideo samochodu, muzyka, color grading, format pionowy."
+          "description": "Dynamiczny montaż wideo samochodu, muzyka, color grading."
         },
         {
           "@type": "Offer",
@@ -912,14 +912,19 @@
         }
 
         .cta-group {
-            flex-direction: column;
-            max-width: 300px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            max-width: 100%;
             margin: 0 auto;
         }
 
         .cta-group .btn {
-            width: 100%;
+            width: auto;
             text-align: center;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.78rem;
         }
 
         .dla-kogo-grid {
