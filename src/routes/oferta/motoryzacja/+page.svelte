@@ -165,87 +165,6 @@
 </section>
 
 <!-- ==============================
-     USŁUGI – trzy karty
-     ============================== -->
-<section id="uslugi-moto">
-    <div class="container">
-        <h2 class="section-title">Co dostajesz?</h2>
-        <p class="section-intro">Kompleksowa obsługa wizualna – od sprzedażowej sesji zdjęciowej po dynamiczną rolkę na social media.</p>
-
-        <div class="uslugi-grid">
-            <article class="usluga-karta">
-                <div class="usluga-ikona">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                </div>
-                <h3>Sesja zdjęciowa auta</h3>
-                <p>15–20 w pełni obrobionych zdjęć w wersjach web i print. Idealne do ogłoszeń sprzedażowych, salonów i mediów społecznościowych.</p>
-                <ul class="usluga-lista">
-                    <li>Selekcja najlepszych ujęć</li>
-                    <li>Pełna postprodukcja i retusz</li>
-                    <li>Pliki JPG w wysokiej rozdzielczości</li>
-                    <li>Dostawa w ciągu 48–72 h</li>
-                </ul>
-            </article>
-
-            <article class="usluga-karta">
-                <div class="usluga-ikona">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
-                </div>
-                <h3>Rolka Instagram / TikTok</h3>
-                <p>Dynamiczny montaż pionowy z dobraną muzyką i color gradingiem. Format idealny do Instagram Reels i TikTok – maximum zasięgów organicznych.</p>
-                <ul class="usluga-lista">
-                    <li>Format 9:16 (pionowy)</li>
-                    <li>Muzyka dopasowana do klimatu</li>
-                    <li>Color grading i efekty</li>
-                    <li>Dostawa w 2–3 dni robocze</li>
-                </ul>
-            </article>
-
-            <article class="usluga-karta wyrozn">
-                <div class="usluga-ikona">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path></svg>
-                </div>
-                <h3>Pakiet Foto + Wideo</h3>
-                <p>Komplet materiałów z jednego spotkania – zdjęcia i rolka. Najlepsza cena i spójny content gotowy do publikacji od razu.</p>
-                <ul class="usluga-lista">
-                    <li>Wszystko z pakietu zdjęciowego</li>
-                    <li>Rolka Instagram / TikTok</li>
-                    <li>Jedno spotkanie, pełen materiał</li>
-                    <li>Oszczędzasz czas i pieniądze</li>
-                </ul>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- ==============================
-     DLA KOGO
-     ============================== -->
-<section class="dla-kogo">
-    <div class="container">
-        <h2 class="section-title">Dla kogo?</h2>
-        <div class="dla-kogo-grid">
-            <div class="dla-kogo-item">
-                <h3>Sprzedający prywatnie</h3>
-                <p>Zdjęcia samochodu do ogłoszenia (OLX, Otomoto). Chcesz sprzedać auto szybciej i drożej? Profesjonalna sesja zdjęciowa samochodu na sprzedaż sprawia, że oferta mocno wyróżnia się na tle ogłoszeń ze zdjęciami z telefonu.</p>
-            </div>
-            <div class="dla-kogo-item">
-                <h3>Salony i komisy</h3>
-                <p>Stała współpraca, abonament lub zlecenia jednorazowe. Spójny, profesjonalny wygląd oferty na OLX, Otomoto i w social media.</p>
-            </div>
-            <div class="dla-kogo-item">
-                <h3>Detailing i tuning</h3>
-                <p>Pokazujesz efekty swojej pracy? Zdjęcia i rolki budują portfolio detailera i przyciągają nowych klientów z Instagrama.</p>
-            </div>
-            <div class="dla-kogo-item">
-                <h3>Pasjonaci i kolekcjonerzy</h3>
-                <p>Masz wyjątkowy samochód i chcesz go uwiecznić? Pamiątkowa sesja motoryzacyjna w plenerze Lublina lub okolicach – pamiątka dla Ciebie, nie tylko na sprzedaż.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==============================
      GALERIA – wybrane realizacje
      ============================== -->
 <section id="galeria-moto">
@@ -340,7 +259,90 @@
     </div>
 </section>
 
-<InstagramHook />
+<!-- ==============================
+     DLA KOGO
+     ============================== -->
+<section class="dla-kogo">
+    <div class="container">
+        <h2 class="section-title">Dla kogo?</h2>
+        <div class="dla-kogo-grid">
+            <div class="dla-kogo-item">
+                <h3>Sprzedający prywatnie</h3>
+                <p>Zdjęcia samochodu do ogłoszenia (OLX, Otomoto). Chcesz sprzedać auto szybciej i drożej? Profesjonalna sesja zdjęciowa samochodu na sprzedaż sprawia, że oferta mocno wyróżnia się na tle ogłoszeń ze zdjęciami z telefonu.</p>
+            </div>
+            <div class="dla-kogo-item">
+                <h3>Salony i komisy</h3>
+                <p>Stała współpraca, abonament lub zlecenia jednorazowe. Spójny, profesjonalny wygląd oferty na OLX, Otomoto i w social media.</p>
+            </div>
+            <div class="dla-kogo-item">
+                <h3>Detailing i tuning</h3>
+                <p>Pokazujesz efekty swojej pracy? Zdjęcia i rolki budują portfolio detailera i przyciągają nowych klientów z Instagrama.</p>
+            </div>
+            <div class="dla-kogo-item">
+                <h3>Pasjonaci i kolekcjonerzy</h3>
+                <p>Masz wyjątkowy samochód i chcesz go uwiecznić? Pamiątkowa sesja motoryzacyjna w plenerze Lublina lub okolicach – pamiątka dla Ciebie, nie tylko na sprzedaż.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==============================
+     USŁUGI – trzy karty, co dostajesz?
+     ============================== -->
+<section id="uslugi-moto">
+    <div class="container">
+        <h2 class="section-title">Co dostajesz?</h2>
+        <p class="section-intro">Kompleksowa obsługa wizualna – od sprzedażowej sesji zdjęciowej po dynamiczną rolkę na social media.</p>
+
+        <div class="uslugi-grid">
+            <article class="usluga-karta">
+                <div class="usluga-ikona">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                </div>
+                <h3>Sesja zdjęciowa auta</h3>
+                <div class="price-badge">od 150 zł</div>
+                <p>15–20 w pełni obrobionych zdjęć. Idealne do ogłoszeń sprzedażowych, salonów i mediów społecznościowych.</p>
+                <ul class="usluga-lista">
+                    <li>Selekcja najlepszych ujęć</li>
+                    <li>Pełna postprodukcja i retusz</li>
+                    <li>Pliki JPG w wysokiej rozdzielczości</li>
+                    <li>Dostawa w ciągu 48–72 h</li>
+                </ul>
+            </article>
+
+            <article class="usluga-karta">
+                <div class="usluga-ikona">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                </div>
+                <h3>Rolka Instagram / TikTok</h3>
+                <div class="price-badge">od 150 zł</div>
+                <p>Dynamiczny montaż pionowy z dobraną muzyką i color gradingiem. Format idealny do Instagram Reels i TikTok – maximum zasięgów organicznych.</p>
+                <ul class="usluga-lista">
+                    <li>Format 9:16 (pionowy)</li>
+                    <li>Muzyka dopasowana do klimatu</li>
+                    <li>Color grading i efekty</li>
+                    <li>Dostawa w 2–3 dni robocze</li>
+                </ul>
+            </article>
+
+            <article class="usluga-karta wyrozn">
+                <div class="usluga-ikona">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path></svg>
+                </div>
+                <h3>Pakiet Foto + Wideo</h3>
+                <div class="price-badge highlight-badge">od 350 zł</div>
+                <p>Komplet materiałów z jednego spotkania – zdjęcia i rolka. Najlepsza cena i spójny content gotowy do publikacji od razu.</p>
+                <ul class="usluga-lista">
+                    <li>Wszystko z pakietu zdjęciowego</li>
+                    <li>Rolka Instagram / TikTok</li>
+                    <li>Jedno spotkanie, pełen materiał</li>
+                    <li>Oszczędzasz czas i pieniądze</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
 
 <!-- ==============================
      PROCES WSPÓŁPRACY
@@ -418,6 +420,7 @@
         </div>
     </div>
 </section>
+<InstagramHook />
 
 <Footer />
 
@@ -590,15 +593,32 @@
 
     .usluga-karta h3 {
         font-size: 1.3rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         color: #fff;
     }
 
-    .usluga-karta > p {
-        font-size: 0.95rem;
-        color: #888;
-        line-height: 1.7;
+    .price-badge {
+        display: inline-block;
+        background-color: #222;
+        color: #ccc;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 600;
         margin-bottom: 1.25rem;
+        border: 1px solid #333;
+    }
+
+    .highlight-badge {
+        background-color: #eab308;
+        color: #000;
+        border-color: #eab308;
+    }
+
+    .usluga-karta > p {
+        color: #888;
+        line-height: 1.6;
+        font-size: 0.95rem;
     }
 
     .cena {
