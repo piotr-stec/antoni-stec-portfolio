@@ -7,6 +7,7 @@
     import Process from '$lib/components/Process.svelte';
     import Contact from '$lib/components/Contact.svelte';
     import BlogTeaser from '$lib/components/BlogTeaser.svelte';
+    import Reviews from '$lib/components/Reviews.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import FAQ from '$lib/components/FAQ.svelte';
     import InstagramHook from '$lib/components/InstagramHook.svelte';
@@ -44,8 +45,9 @@
 <InstagramHook />
 <Backstage />
 <Process />
-<FAQ />
 <BlogTeaser posts={data.recentPosts} />
+<Reviews />
+<FAQ />
 <Contact id="kontakt" />
 <Footer />
 
