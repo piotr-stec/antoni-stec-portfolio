@@ -31,9 +31,9 @@
             category: "Nieruchomości",
             slug: "nieruchomosci",
             portfolioFilter: "interior",
-            description: "Sesje zdjęciowe nieruchomości na sprzedaż i wynajem w Lublinie. Jasne, przestronne kadry w technice HDR, które wyróżnią Twoje ogłoszenie i przyspieszą transakcję.",
+            description: "Sesje zdjęciowe nieruchomości na sprzedaż i wynajem w Lublinie. Jasne, przestronne kadry w technice HDR oraz ujęcia z drona, które wspólnie wyróżnią Twoje ogłoszenie i przyspieszą transakcję.",
             offers: [
-                { title: "Sesja mieszkania / lokalu", range: "150 – 200 zł", details: "Szerokie kadry, HDR, usuwanie niedoskonałości." }
+                { title: "Sesja mieszkania / domu", range: "150 – 300 zł", details: "Szerokie kadry, HDR, ujęcia z powietrza (dron)." }
             ],
             image: "/portfolio/nieruchomosci/01.webp"
         },
