@@ -1,12 +1,21 @@
 <script>
 	import '../app.css';
     import Navbar from '$lib/components/Navbar.svelte';
+    import CookieBar from '$lib/components/CookieBar.svelte';
     import { dev } from '$app/environment';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { injectAnalytics } from '@vercel/analytics/sveltekit';
+    import { onMount } from 'svelte';
 
     injectSpeedInsights();
     injectAnalytics({ mode: dev ? 'development' : 'production' });
+
+    onMount(() => {
+        if (typeof history !== 'undefined') {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    });
 </script>
 
 <svelte:head>
@@ -81,6 +90,8 @@
 		<slot />
 	</main>
 </div>
+
+<CookieBar />
 
 <style>
     :global(body) {
